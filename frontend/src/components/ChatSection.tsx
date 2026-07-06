@@ -85,14 +85,14 @@ export function ChatSection() {
 
   return (
     <MessageScrollerProvider>
-      <div className="flex h-full flex-col rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
+      <div className="flex flex-1 flex-col rounded-2xl border border-border bg-card shadow-sm overflow-hidden">
         <MessageScroller className="flex-1">
           <MessageScrollerViewport className="px-4 py-4">
             <MessageScrollerContent>
               {chatHistory.length === 0 && (
                 <MessageScrollerItem scrollAnchor>
                   <p className="text-center text-sm text-muted-foreground">
-                    Tegyél fel egy kérdést a dokumentumokkal kapcsolatban.
+                    Ask about the uploaded documents.
                   </p>
                 </MessageScrollerItem>
               )}
@@ -134,7 +134,7 @@ export function ChatSection() {
             value={userMessage}
             onChange={e => setUserMessage(e.target.value)}
             onKeyDown={e => e.key === "Enter" && ask()}
-            placeholder="Írj egy kérdést..."
+            placeholder="Write a question..."
             disabled={isLoading}
             className="h-10 rounded-xl"
           />

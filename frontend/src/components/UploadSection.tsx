@@ -8,6 +8,7 @@ type UploadStatus = "idle" | "uploading" | "success" | "error"
 
 export function UploadSection() {
     const [file, setFile] = useState<File | null>(null);
+    const [fileTitle, setFileTitle] = useState<string>("");
     const [uploadStatus, setUploadStatus] = useState<UploadStatus>("idle");
     const [downloading, setDownloading] = useState<boolean>(true);
     const [documents, setDocuments] = useState<string[]>([]);
@@ -43,7 +44,7 @@ export function UploadSection() {
             });
             if (response.ok) {
                 setDocuments(prev => prev.filter(e => e !== fileName));
-                toast.success(fileName + " sikeresen törölve")
+                toast.success(fileName + " successfully deleted")
                 return;
             }
             toast.error("An error occurred while deleting the document: " + fileName);
@@ -58,23 +59,25 @@ export function UploadSection() {
         setUploadStatus("uploading");
         const formData = new FormData();
         formData.append("file", file);
+        formData.append("title", fileTitle);
         try {
             const response = await fetch("http://localhost:8000/upload", {
                 method: "POST",
                 body: formData
             });
             if (response.ok) {
-                toast.success("File sikeresen feltöltve!");
+                toast.success("File uploaded successfully!");
                 setFile(null);
+                setFileTitle("");
                 setUploadStatus("idle");
                 getDocuments();
                 return;
             }
             setUploadStatus("error");
-            toast.error("Hiba történt!");
+            toast.error("An error occurred!");
         } catch {
             setUploadStatus("error");
-            toast.error("Hiba történt!");
+            toast.error("An error occurred!");
         }
     }
 
@@ -85,16 +88,26 @@ export function UploadSection() {
                 uploadStatus !== "uploading" && "cursor-pointer hover:border-blue-400",
             )}>
                 {uploadStatus === "uploading" && <Spinner className="size-8 text-blue-500" />}
-                {uploadStatus !== "uploading" && <span>{file ? file.name : "Húzd ide a fájlt, vagy kattints"}</span>}
+                {uploadStatus !== "uploading" && <span>{file ? file.name : "Choose a file"}</span>}
                 <input type="file" className="hidden" disabled={uploadStatus === "uploading"} onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
             </label>
-            <div className="flex justify-end">
-                <Button disabled={uploadStatus === "uploading"} onClick={upload}>Upload</Button>
+            <div className='flex flex-col gap-1'>
+                <input
+                    type="text"
+                    placeholder="Document title"
+                    value={fileTitle}
+                    onChange={(e) => setFileTitle(e.target.value)}
+                    disabled={uploadStatus === "uploading"}
+                    className="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+                <p className="text-xs text-gray-500">Give a descriptive title so the AI knows what this document is about.</p>
             </div>
-
+            <div className="flex justify-end">
+                <Button disabled={uploadStatus === "uploading" || !file || !fileTitle} onClick={upload}>Upload</Button>
+            </div>
             {downloading && <Spinner className="size-5" />}
             {!downloading && documents.length === 0 && (
-                <p className="text-sm text-gray-500">Nincs feltöltött dokumentum.</p>
+                <p className="text-sm text-gray-500">No documents uploaded.</p>
             )}
             {!downloading && documents.length > 0 && (
                 <ul className="flex flex-col gap-2">
@@ -102,7 +115,7 @@ export function UploadSection() {
                         <li key={doc} className="flex justify-between items-center border rounded px-3 py-2 text-sm">
                             <span>{doc}</span>
                             <Button variant="destructive" size="sm" onClick={() => deleteDocument(doc)}>
-                                Törlés
+                                Delete
                             </Button>
                         </li>
                     ))}

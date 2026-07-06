@@ -10,7 +10,7 @@ export default function ActionTab() {
             <TabsTrigger value='chat'>Ask</TabsTrigger>
             <TabsTrigger value='upload'>Upload document</TabsTrigger>
         </TabsList>
-        <TabsContent value='chat' className="flex-1 min-h-0">
+        <TabsContent value='chat' className="flex-1 min-h-0 flex flex-col">
             <ChatSection/>
         </TabsContent >
         <TabsContent value='upload'>

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, File, UploadFile
+from fastapi import APIRouter, Depends, File, UploadFile, Form
 from app.services.ingestion_service import IngestionService
 from app.services.retrieval_service import RetrievalService
 from app.services.document_service import DocumentService
@@ -10,23 +10,23 @@ import json
 router = APIRouter();
 
 @router.post("/upload")
-async def upload_pdf(file: UploadFile = File(...), service: IngestionService = Depends(get_ingestion_service)) -> dict[str, str]:
-    service.process_pdf(file)
+def upload_pdf(file: UploadFile = File(...), title: str = Form(...), service: IngestionService = Depends(get_ingestion_service)) -> dict[str, str]:
+    service.process_pdf(file, title)
     return {"message": f"File uploaded and processed successfully: {file.filename}"}
 
 @router.post("/ask")
 async def ask_question(body: AskRequest, service: RetrievalService = Depends(get_retrieval_service)) -> AnswerResponse:
-    question_answer = service.answer(body.question, body.history)
+    question_answer = await service.answer(body.question, body.history)
     return AnswerResponse(answer=question_answer["answer"], sources=question_answer["sources"])
 
 @router.get("/documents")
-async def get_documents(service: DocumentService = Depends(get_document_service)) -> list[str]:
+def get_documents(service: DocumentService = Depends(get_document_service)) -> list[str]:
     return service.get_documents()
 
 @router.post("/ask/stream")
 async def ask_question_stream(body: AskRequest, service: RetrievalService = Depends(get_retrieval_service)) -> StreamingResponse:
-    def generate():
-        for token, sources in service.stream_answer(body.question, body.history):
+    async def generate():
+        async for token, sources in service.stream_answer(body.question, body.history):
             if sources is not None:
                 yield f'data: {json.dumps({"sources": sources})}\n\n'
             else:
@@ -35,5 +35,5 @@ async def ask_question_stream(body: AskRequest, service: RetrievalService = Depe
 
 
 @router.delete("/document")
-async def delete_document(name: str, service: DocumentService = Depends(get_document_service)) -> None:
+def delete_document(name: str, service: DocumentService = Depends(get_document_service)) -> None:
     service.delete_document(name)

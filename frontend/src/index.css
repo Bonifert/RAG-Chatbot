@@ -3,6 +3,10 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+[data-message-scroller-spacer] {
+  height: auto !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

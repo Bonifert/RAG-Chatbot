@@ -15,7 +15,7 @@ class IngestionService:
             chunk_overlap=int(os.getenv("CHUNK_OVERLAP", "100"))
         )
 
-    def process_pdf(self, pdf: UploadFile) -> None:
+    def process_pdf(self, pdf: UploadFile, title: str) -> None:
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
             tmp.write(pdf.file.read())
             tmp_path = tmp.name
@@ -23,7 +23,7 @@ class IngestionService:
             loader = PyMuPDFLoader(tmp_path)
             docs = loader.load()
             for doc in docs:
-                doc.metadata["source"] = pdf.filename
+                doc.metadata["source"] = title
             chunks = self._chunk_documents(docs)
             self.document_repository.add_document(chunks)
         finally:
