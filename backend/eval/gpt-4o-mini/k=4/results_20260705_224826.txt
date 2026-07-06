@@ -1,0 +1,85 @@
+=== EVAL RUN METADATA ===
+Run:       2026-07-05 22:48:26
+Model:     gpt-4o-mini
+Embedding: text-embedding-3-small
+Samples:   21
+
+=== PER QUESTION ===
+[single_hop] How many meals did ALDI pack for disaster relief in 2024?
+  faithfulness=0.50  relevancy=0.95  recall=1.00  ⚠
+
+[single_hop] What is ALDI's position in U.S. grocery market growth?
+  faithfulness=1.00  relevancy=0.75  recall=1.00
+
+[single_hop] By what year is ALDI SOUTH Group committed to achieving net zero GHG emissions across its entire value chain?
+  faithfulness=1.00  relevancy=0.82  recall=1.00
+
+[single_hop] What distinction has ALDI earned regarding EPA GreenChill platinum-level certifications compared to other U.S. grocery retailers?
+  faithfulness=1.00  relevancy=0.89  recall=1.00
+
+[single_hop] Does ALDI use natural refrigeration systems?
+  faithfulness=1.00  relevancy=0.81  recall=0.00  ⚠
+
+[single_hop] Did ALDI manage to reduce its ALDI-exclusive primary packaging material? If so, by how much?
+  faithfulness=1.00  relevancy=0.88  recall=1.00
+
+[single_hop] What did ALDI raise $1.8 million for?
+  faithfulness=1.00  relevancy=0.71  recall=1.00
+
+[single_hop] Does ALDI have a partnership with Hope Chicago?
+  faithfulness=1.00  relevancy=0.92  recall=1.00
+
+[single_hop] How many gift cards did ALDI distribute in 2024, and what was their total value?
+  faithfulness=1.00  relevancy=0.96  recall=1.00
+
+[single_hop] What is ALDI doing to achieve a hunger-free America?
+  faithfulness=1.00  relevancy=0.94  recall=0.00  ⚠
+
+[single_hop] Does the company support the My Block My Hood My City (M3) youth organization, and if so, how?
+  faithfulness=1.00  relevancy=0.83  recall=1.00
+
+[single_hop] Does the company support those affected by hurricanes?
+  faithfulness=1.00  relevancy=0.95  recall=1.00
+
+[single_hop] What did Liz Scott, Co-Executive Director of Alex's Lemonade Stand, say about curing childhood cancer?
+  faithfulness=1.00  relevancy=0.51  recall=1.00  ⚠
+
+[multi_hop] How does ALDI demonstrate that sustainability and affordability can go hand in hand?
+  faithfulness=1.00  relevancy=0.94  recall=0.60  ⚠
+
+[multi_hop] What specific actions did ALDI take in 2024 to reduce carbon emissions from its operations?
+  faithfulness=1.00  relevancy=0.97  recall=0.33  ⚠
+
+[multi_hop] What are ALDI's packaging sustainability goals, and what progress has it made toward them?
+  faithfulness=0.86  relevancy=0.96  recall=0.40  ⚠
+
+[multi_hop] How does ALDI manage food waste at the end of its products' lifecycle?
+  faithfulness=1.00  relevancy=1.00  recall=0.33  ⚠
+
+[multi_hop] What recognition has ALDI received for its sustainability efforts?
+  faithfulness=1.00  relevancy=0.99  recall=0.57  ⚠
+
+[multi_hop] How has ALDI's fundraising for Alex's Lemonade Stand grown since the partnership began, and what is the future goal?
+  faithfulness=1.00  relevancy=0.86  recall=1.00
+
+[out_of_scope] How many ALDI stores are there in Hungary?
+  refused ✓  (generation metrics n/a)
+
+[out_of_scope] What is the capital of Spain?
+  refused ✓  (generation metrics n/a)
+
+=== AVERAGES (answerable only, n=19) ===
+faithfulness:     0.966
+answer_relevancy: 0.877
+context_recall:   0.749
+
+=== REFUSAL (out_of_scope) ===
+correct refusals: 2/2 (100%)
+
+=== PER TYPE ===
+[multi_hop] (n=6)
+  faithfulness=0.976  relevancy=0.955  recall=0.540
+[out_of_scope] (n=2)
+  correct refusals=2/2 (100%)
+[single_hop] (n=13)
+  faithfulness=0.962  relevancy=0.841  recall=0.846

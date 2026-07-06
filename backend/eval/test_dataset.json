@@ -1,0 +1,107 @@
+[
+  {
+    "question": "How many meals did ALDI donate to Feeding America in 2024, and how much money did it provide?",
+    "ground_truth": "ALDI donated 36.9 million meals to Feeding America in support of its mission to build a hunger-free America. ALDI also provided $770,000 to the organization, including $170,000 to its Food Rescue Fund to help with food insecurity.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What is ALDI's position in U.S. grocery market growth?",
+    "ground_truth": "ALDI is the fastest-growing grocer in the U.S.",
+    "type": "single_hop"
+  },
+  {
+    "question": "By what year is ALDI SOUTH Group committed to achieving net zero GHG emissions across its entire value chain?",
+    "ground_truth": "By 2050 across the entire value chain, with Scopes 1 and 2 already targeted for 2035.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What distinction has ALDI earned regarding EPA GreenChill platinum-level certifications compared to other U.S. grocery retailers?",
+    "ground_truth": "ALDI has earned more EPA GreenChill platinum-level certifications than any other U.S. grocery retailer. The platinum-level is the program's highest distinction for Store Certification.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Does ALDI use natural refrigeration systems?",
+    "ground_truth": "Yes, nearly 800 stores use natural refrigeration systems, representing 33% of the store footprint.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Did ALDI manage to reduce its ALDI-exclusive primary packaging material? If so, by how much?",
+    "ground_truth": "Yes, ALDI reduced its ALDI-exclusive primary packaging material by 15% by 2025.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What did ALDI raise $1.8 million for?",
+    "ground_truth": "ALDI raised $1.8 million for Alex's Lemonade Stand (ALSF), of which over $700,000 was donated by ALDI employees and suppliers.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Does ALDI have a partnership with Hope Chicago?",
+    "ground_truth": "Yes, in 2024 ALDI strengthened its partnership with Hope Chicago by committing to increase its total donation to $2 million by 2026.",
+    "type": "single_hop"
+  },
+  {
+    "question": "How many gift cards did ALDI distribute in 2024, and what was their total value?",
+    "ground_truth": "ALDI distributed over 8,100 gift cards in 2024, $477,900 in total",
+    "type": "single_hop"
+  },
+  {
+    "question": "How many meals did ALDI pack for disaster relief in 2024?",
+    "ground_truth": "ALDI packed over 531,666 meals for those impacted by natural disasters, with support from thousands of employees across all 26 divisions.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Does the company support the My Block My Hood My City (M3) youth organization, and if so, how?",
+    "ground_truth": "Yes, ALDI provided $100,000 in grant funding to My Block My Hood My City (M3) to support its youth programming and scholarships.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Does the company support those affected by hurricanes?",
+    "ground_truth": "Yes, ALDI donated $1.6 million to the American Red Cross to support those impacted by hurricanes Debby, Helene and Milton.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What did Liz Scott, Co-Executive Director of Alex's Lemonade Stand, say about curing childhood cancer?",
+    "ground_truth": "Liz Scott stated that since 2019, ALDI, its shoppers and employees have been vital partners in the mission to cure childhood cancer, and that their record-breaking support last year helped make a meaningful difference for children and families facing cancer.",
+    "type": "single_hop"
+  },
+  {
+    "question": "How does ALDI demonstrate that sustainability and affordability can go hand in hand?",
+    "ground_truth": "ALDI shoppers do not have to choose between shopping responsibly and saving money. ALDI offers the lowest prices of any national grocery store, saving shoppers $8.3 billion per year, and families of four can save nearly $4,000 annually. At the same time, ALDI SOUTH Group has set net-zero GHG emissions targets validated by SBTi, and ALDI has been recognized as one of the most sustainable grocers by Progressive Grocer.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "What specific actions did ALDI take in 2024 to reduce carbon emissions from its operations?",
+    "ground_truth": "ALDI took multiple steps to reduce carbon emissions in 2024: nearly 800 stores (33% of the footprint) use natural refrigeration systems; ALDI powered operations with 100% renewable energy for the sixth consecutive year via Renewable Energy Credits; 215 stores and 14 distribution centers are powered in part by solar or wind energy; 119 electric vehicle charging ports were installed across 13 divisions; carbon emissions were reduced by 78% on daily deliveries to the 119 stores in the Moreno Valley division by converting to renewable diesel; and a smart-building refrigeration system was rolled out in all stores nationwide to improve efficiency and reduce food waste.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "What are ALDI's packaging sustainability goals, and what progress has it made toward them?",
+    "ground_truth": "ALDI's packaging goals include making 100% of ALDI-exclusive primary packaging reusable, recyclable or compostable by the end of 2025, using 20% post-consumer recycled (PCR) content on average in its primary plastic packaging by 2025, and reducing ALDI-exclusive primary packaging material by 15% by 2025. ALDI achieved the 15% reduction goal, and 76% of its primary packaging is now recyclable, compostable or reusable by weight. However, ALDI acknowledged it is unlikely to reach its goals for recyclable packaging and recycled content by 2025.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How does ALDI manage food waste at the end of its products' lifecycle?",
+    "ground_truth": "ALDI manages food waste through several approaches. It donated over 44.2 million pounds of food, equivalent to more than 36.9 million meals, to Feeding America and other organizations. It sent 5,951 tons of inedible food to compost and anaerobic digestion facilities, nearly triple the prior year. ALDI expanded its anaerobic digestion program from 20 stores in Massachusetts to over 200 stores across five states, recycling more than 2,000 tons of food waste through the program. It also partnered with Green Era, a Chicago facility that turns packaged food waste into renewable energy and compost. Additionally, ALDI turned surplus loose grapes into a new product, Frozen Cotton Candy Grapes, preventing nearly 50,000 pounds of grapes from being wasted in 2024.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "What recognition has ALDI received for its sustainability efforts?",
+    "ground_truth": "ALDI has received multiple recognitions. It was named a Progressive Grocer Top 10 Most Sustainable Grocer for the third year in a row, is EPA GreenChill Certified, and is Great Place to Work Certified. For the sixth consecutive year, ALDI was recognized by the EPA GreenChill Store Certification Program for its leadership in reducing refrigerant emissions, and for the third consecutive year it earned more platinum-level certifications than any other U.S. grocery retailer. ALDI also received the Alexandra Scott Crystal Cup Award from Alex's Lemonade Stand Foundation.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How has ALDI's fundraising for Alex's Lemonade Stand grown since the partnership began, and what is the future goal?",
+    "ground_truth": "Since the partnership began in 2019, ALDI has raised $7.8 million for Alex's Lemonade Stand Foundation, with a goal to reach $10 million by 2027. 2024 was its most successful year yet, raising over $1.8 million, driven by employees hosting 491 lemonade stands during Lemonade Days and logging 430,000 miles during the Million Mile Challenge, where ALDI donated $1 for every mile up to $250,000.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How many ALDI stores are there in Hungary?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  },
+  {
+    "question": "What is the capital of Spain?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  }
+]
