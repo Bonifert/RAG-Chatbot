@@ -22,14 +22,15 @@ Chat with your PDF documents using RAG (Retrieval-Augmented Generation).
 
 ## Highlights
 
-- Evaluated with [RAGAS](https://github.com/explodinggradients/ragas) across faithfulness,
-  answer relevancy, and context recall — not just "it seems to work," actual measured numbers.
-- Retrieval was tuned by testing multiple `k` values specifically against multi-hop questions
-  (where a single query has to pull from several distant sections), landing on `k=7`.
-- The evaluation judge model is deliberately different from the app's own model, so the system
-  isn't grading its own homework.
-- Fixed a blocking-event-loop issue in the FastAPI streaming routes, since `/ask` and
-  `/ask/stream` were originally synchronous and stalled the server under concurrent requests.
+- Evaluated with RAGAS on faithfulness, answer relevancy, and context recall, with actual
+  measured numbers instead of guessing.
+- Tuned the retrieval `k` value by testing it specifically on multi-hop questions, which
+  need chunks from several distant sections of the document. Landed on k=7.
+- Used a different model as the evaluation judge than the one the app itself uses, so it
+  isn't grading its own answers.
+- Found and fixed a blocking event loop bug in the FastAPI streaming routes. `/ask` and
+  `/ask/stream` were originally synchronous, which stalled the server under concurrent
+  requests.
 
 See [Evaluation](#evaluation) below for the full methodology and results.
 
