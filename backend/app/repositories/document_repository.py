@@ -14,7 +14,7 @@ class DocumentRepository:
             connection=os.getenv("DATABASE_URL"),
         )
         self.conn = psycopg2.connect(os.getenv("DATABASE_URL"))
-        self.k = int(os.getenv("SIMILARITY_SEARCH_K", "4"))
+        self.k = int(os.getenv("SIMILARITY_SEARCH_K", "7"))
 
     def add_document(self, chunks: list[Document]):
         self.vectorstore.add_documents(chunks)
