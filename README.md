@@ -68,8 +68,7 @@ All settings are in `backend/.env` — copy `.env.example` to get started.
 - `OPENAI_MODEL` — LLM model (default: `gpt-4o-mini`)
 - `OPENAI_EMBEDDING_MODEL` — embedding model (default: `text-embedding-3-small`)
 - `CHUNK_SIZE` / `CHUNK_OVERLAP` — chunking parameters (default: `500` / `100`)
-- `SIMILARITY_SEARCH_K` — how many chunks to retrieve per query (default: `7`,
-  tuned via the [evaluation pipeline](#evaluation))
+- `SIMILARITY_SEARCH_K` — how many chunks to retrieve per query (default: `7`, it may change later)
 - `CHAT_HISTORY_RETRIEVAL_WINDOW` — how many previous messages are used to rewrite
   follow-up questions into self-contained search queries (default: `4`)
 - `CHAT_HISTORY_ANSWER_WINDOW` — how many previous messages are sent as conversation
