@@ -52,4 +52,6 @@ I want to try query decomposition first, because I think it can help a lot with 
 
 Re-ranking probably won't help much here. It only sorts and picks from chunks that already got retrieved, it can't bring back a chunk that was never retrieved. Since recall is the actual problem, re-ranking doesn't really help.
 
-If decomposition alone isn't enough, tuning the chunking is probably the better change, not re-ranking. It might also help with the single_hop recall issue, which decomposition won't touch since a single_hop question doesn't need splitting.
+If decomposition isn't enough on its own, chunking tuning is the next thing to try, not re-ranking. It could also help single_hop recall, which decomposition doesn't touch.
+
+I'm not sure yet how I want to tune the chunking. Two options: contextual retrieval (add short context to each chunk before embedding it), or structure-based chunking (split by section or paragraph instead of a fixed character count). I need to look into both more before deciding.
