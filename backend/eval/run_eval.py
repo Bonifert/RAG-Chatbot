@@ -6,6 +6,7 @@ import math
 from collections import defaultdict
 from datetime import datetime
 from typing import TypedDict
+from typing import TextIO
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -20,6 +21,7 @@ from ragas import SingleTurnSample, EvaluationDataset
 from ragas.llms import llm_factory
 from ragas.embeddings import OpenAIEmbeddings
 from ragas.metrics.collections import Faithfulness, AnswerRelevancy, ContextRecall
+from pydantic import BaseModel
 
 
 class Result(TypedDict):
@@ -29,6 +31,8 @@ class Result(TypedDict):
     answer_relevancy: float
     context_recall: float
     refused: bool
+    corrected: bool
+    answer: str
 
 
 class RawSample(TypedDict):
@@ -37,9 +41,16 @@ class RawSample(TypedDict):
     type: str
 
 
+class CorrectionCheck(BaseModel):
+    corrected_false_premise: bool
+
+
+LLM_MODEL = "gpt-4.1-mini"
+EMBEDDING_MODEL = "text-embedding-3-small"
+
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-llm = llm_factory("gpt-4.1-mini", client=client)
-embeddings = OpenAIEmbeddings(model="text-embedding-3-small", client=client)
+llm = llm_factory(LLM_MODEL, client=client, max_tokens=4096)
+embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, client=client)
 
 repo = DocumentRepository()
 service = RetrievalService(repo)
@@ -48,51 +59,67 @@ faithfulness_metric = Faithfulness(llm=llm)
 relevancy_metric = AnswerRelevancy(llm=llm, embeddings=embeddings)
 recall_metric = ContextRecall(llm=llm)
 
-semaphore = asyncio.Semaphore(11)
+semaphore = asyncio.Semaphore(9)
 
-with open("eval/test_dataset.json") as f:
+with open("eval/test_dataset_apollo.json") as f:
     raw: list[RawSample] = json.load(f)
 
 
-def mean(xs: list[float]) -> float:
-    xs = [x for x in xs if not math.isnan(x)]
-    return sum(xs) / len(xs) if xs else float("nan")
+def mean(values: list[float]) -> float:
+    values = [v for v in values if not math.isnan(v)]
+    return sum(values) / len(values) if values else float("nan")
+
+
+async def check_false_premise_correction(question: str, response: str, reference: str) -> bool:
+    prompt = f"""A user asked a question containing a FALSE premise (an incorrect assumption).
+Question: {question}
+Correct clarification: {reference}
+System's actual response: {response}
+
+Did the system's response correctly identify and correct the false premise (clearly stating the correct fact, not confirming or ignoring the false assumption)?
+"""
+    result = await llm.agenerate(prompt, CorrectionCheck)
+    return result.corrected_false_premise
 
 
 def type_breakdown(results: list[Result]) -> str:
     by_type: dict[str, list[Result]] = defaultdict(list)
-    for r in results:
-        by_type[r["type"]].append(r)
+    for result in results:
+        by_type[result["type"]].append(result)
     lines: list[str] = []
-    for t in sorted(by_type):
-        rows = by_type[t]
-        lines.append(f"[{t}] (n={len(rows)})")
-        if t == "out_of_scope":
+    for qtype in sorted(by_type):
+        rows = by_type[qtype]
+        lines.append(f"[{qtype}] (n={len(rows)})")
+        if qtype == "out_of_scope":
             n_ref = sum(1 for x in rows if x["refused"])
             lines.append(f"  correct refusals={n_ref}/{len(rows)} ({n_ref / len(rows):.0%})")
+        elif qtype == "false_premise":
+            n_corrected = sum(1 for x in rows if x["corrected"])
+            lines.append(f"  correct corrections={n_corrected}/{len(rows)} ({n_corrected / len(rows):.0%})")
+            lines.append(f"  faithfulness={mean([x['faithfulness'] for x in rows]):.3f}  relevancy={mean([x['answer_relevancy'] for x in rows]):.3f}  recall={mean([x['context_recall'] for x in rows]):.3f}")
         else:
-            f_ = mean([x["faithfulness"] for x in rows])
-            r_ = mean([x["answer_relevancy"] for x in rows])
-            c_ = mean([x["context_recall"] for x in rows])
-            lines.append(f"  faithfulness={f_:.3f}  relevancy={r_:.3f}  recall={c_:.3f}")
+            faithfulness = mean([x["faithfulness"] for x in rows])
+            relevancy = mean([x["answer_relevancy"] for x in rows])
+            recall = mean([x["context_recall"] for x in rows])
+            lines.append(f"  faithfulness={faithfulness:.3f}  relevancy={relevancy:.3f}  recall={recall:.3f}")
     return "\n".join(lines)
 
 
-async def build_one(s: RawSample) -> tuple[SingleTurnSample, str]:
-    docs = await asyncio.to_thread(repo.similarity_search, s["question"])
+async def build_one(raw_sample: RawSample) -> tuple[SingleTurnSample, str]:
+    docs = await asyncio.to_thread(repo.similarity_search, raw_sample["question"])
     contexts: list[str] = [doc.page_content for doc in docs]
-    result = await service.answer(s["question"], [])
+    result = await service.answer(raw_sample["question"], [])
     sample = SingleTurnSample(
-        user_input=s["question"],
+        user_input=raw_sample["question"],
         response=result["answer"],
         retrieved_contexts=contexts,
-        reference=s["ground_truth"],
+        reference=raw_sample["ground_truth"],
     )
-    return sample, s.get("type", "unknown")
+    return sample, raw_sample.get("type", "unknown")
 
 
 async def build_all() -> tuple[list[SingleTurnSample], list[str]]:
-    pairs = await asyncio.gather(*[build_one(s) for s in raw])
+    pairs = await asyncio.gather(*[build_one(raw_sample) for raw_sample in raw])
     return [p[0] for p in pairs], [p[1] for p in pairs]
 
 
@@ -110,11 +137,34 @@ async def score_sample(sample: SingleTurnSample, qtype: str) -> Result:
                 retrieved_contexts=sample.retrieved_contexts, reference=sample.reference  # type: ignore[union-attr]
             ),
         )
-        f, r, c = faith.value, relevancy.value, recall.value  # type: ignore[union-attr]
-        refused = "based on the available documents" in sample.response.lower()  # type: ignore[union-attr]
+        faith_score, relevancy_score, recall_score = faith.value, relevancy.value, recall.value  # type: ignore[union-attr]
+        refused = "based on the available documents" in sample.response.lower() if qtype == "out_of_scope" else False  # type: ignore[union-attr]
+        corrected = await check_false_premise_correction(sample.user_input, sample.response, sample.reference) if qtype == "false_premise" else False  # type: ignore[union-attr]
         print(f"✓ [{qtype}] {sample.user_input[:60]}")  # type: ignore[union-attr]
-        print(f"  faithfulness={f:.2f}  relevancy={r:.2f}  recall={c:.2f}")
-        return {"question": sample.user_input, "type": qtype, "faithfulness": f, "answer_relevancy": r, "context_recall": c, "refused": refused}  # type: ignore[union-attr]
+        print(f"  faithfulness={faith_score:.2f}  relevancy={relevancy_score:.2f}  recall={recall_score:.2f}")
+        return {
+            "question": sample.user_input,  # type: ignore[union-attr]
+            "type": qtype,
+            "faithfulness": faith_score,
+            "answer_relevancy": relevancy_score,
+            "context_recall": recall_score,
+            "refused": refused,
+            "corrected": corrected,
+            "answer": sample.response,
+        }
+
+
+def write_result(file: TextIO, result: Result) -> None:
+    file.write(f"[{result['type']}] {result['question']}\n")
+    metrics = f"faithfulness={result['faithfulness']:.2f}  relevancy={result['answer_relevancy']:.2f}  recall={result['context_recall']:.2f}"
+    if result["type"] == "out_of_scope":
+        file.write(f"  {'refused ✓' if result['refused'] else 'NOT refused ✗'}  (generation metrics n/a)\n")
+    elif result["type"] == "false_premise":
+        file.write(f"  {'corrected ✓' if result['corrected'] else 'NOT corrected ✗'}  {metrics}\n")
+    else:
+        warning = "  ⚠" if (result["faithfulness"] < 0.7 or result["answer_relevancy"] < 0.7 or result["context_recall"] < 0.7) else ""
+        file.write(f"  {metrics}{warning}\n")
+    file.write(f"  answer: {result['answer']}\n\n")
 
 
 async def run_eval() -> None:
@@ -123,21 +173,23 @@ async def run_eval() -> None:
 
     results: list[Result] = await asyncio.gather(*[score_sample(s, t) for s, t in zip(dataset.samples, types)])  # type: ignore[union-attr]
 
-    answerable = [r for r in results if r["type"] != "out_of_scope"]
-    oos = [r for r in results if r["type"] == "out_of_scope"]
-    n_refused = sum(1 for r in oos if r["refused"])
-    avg_faith = mean([r["faithfulness"] for r in answerable])
-    avg_rel = mean([r["answer_relevancy"] for r in answerable])
-    avg_rec = mean([r["context_recall"] for r in answerable])
+    answerable = [result for result in results if result["type"] not in ("out_of_scope", "false_premise")]
+    out_of_scope_results = [result for result in results if result["type"] == "out_of_scope"]
+    n_refused = sum(1 for result in out_of_scope_results if result["refused"])
+    avg_faithfulness = mean([result["faithfulness"] for result in answerable])
+    avg_relevancy = mean([result["answer_relevancy"] for result in answerable])
+    avg_recall = mean([result["context_recall"] for result in answerable])
+    breakdown = type_breakdown(results)
+
     print(f"\n=== AVERAGES (answerable only, n={len(answerable)}) ===")
-    print(f"faithfulness:     {avg_faith:.3f}")
-    print(f"answer_relevancy: {avg_rel:.3f}")
-    print(f"context_recall:   {avg_rec:.3f}")
-    if oos:
+    print(f"faithfulness:     {avg_faithfulness:.3f}")
+    print(f"answer_relevancy: {avg_relevancy:.3f}")
+    print(f"context_recall:   {avg_recall:.3f}")
+    if out_of_scope_results:
         print(f"\n=== REFUSAL (out_of_scope) ===")
-        print(f"correct refusals: {n_refused}/{len(oos)} ({n_refused / len(oos):.0%})")
+        print(f"correct refusals: {n_refused}/{len(out_of_scope_results)} ({n_refused / len(out_of_scope_results):.0%})")
     print(f"\n=== PER TYPE ===")
-    print(type_breakdown(results))
+    print(breakdown)
 
     now = datetime.now()
     timestamp = now.strftime("%Y%m%d_%H%M%S")
@@ -145,26 +197,21 @@ async def run_eval() -> None:
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(f"=== EVAL RUN METADATA ===\n")
         f.write(f"Run:       {now.strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"Model:     {os.getenv('OPENAI_MODEL', 'gpt-4o-mini')}\n")
-        f.write(f"Embedding: {os.getenv('OPENAI_EMBEDDING_MODEL', 'text-embedding-3-small')}\n")
+        f.write(f"Model:     {LLM_MODEL}")
+        f.write(f"Embedding: {EMBEDDING_MODEL}")
         f.write(f"Samples:   {len(results)}\n\n")
         f.write(f"=== PER QUESTION ===\n")
-        for r in results:
-            f.write(f"[{r['type']}] {r['question']}\n")
-            if r["type"] == "out_of_scope":
-                f.write(f"  {'refused ✓' if r['refused'] else 'NOT refused ✗'}  (generation metrics n/a)\n\n")
-            else:
-                warning = "  ⚠" if (r["faithfulness"] < 0.7 or r["answer_relevancy"] < 0.7 or r["context_recall"] < 0.7) else ""
-                f.write(f"  faithfulness={r['faithfulness']:.2f}  relevancy={r['answer_relevancy']:.2f}  recall={r['context_recall']:.2f}{warning}\n\n")
+        for result in results:
+            write_result(file=f, result=result)
         f.write(f"=== AVERAGES (answerable only, n={len(answerable)}) ===\n")
-        f.write(f"faithfulness:     {avg_faith:.3f}\n")
-        f.write(f"answer_relevancy: {avg_rel:.3f}\n")
-        f.write(f"context_recall:   {avg_rec:.3f}\n")
-        if oos:
+        f.write(f"faithfulness:     {avg_faithfulness:.3f}\n")
+        f.write(f"answer_relevancy: {avg_relevancy:.3f}\n")
+        f.write(f"context_recall:   {avg_recall:.3f}\n")
+        if out_of_scope_results:
             f.write(f"\n=== REFUSAL (out_of_scope) ===\n")
-            f.write(f"correct refusals: {n_refused}/{len(oos)} ({n_refused / len(oos):.0%})\n")
+            f.write(f"correct refusals: {n_refused}/{len(out_of_scope_results)} ({n_refused / len(out_of_scope_results):.0%})\n")
         f.write(f"\n=== PER TYPE ===\n")
-        f.write(type_breakdown(results) + "\n")
+        f.write(breakdown + "\n")
     print(f"\nResults saved to {output_path}")
 
 

@@ -1,0 +1,362 @@
+[
+  {
+    "question": "Where did the Apollo 11 Lunar Module land on the Moon, specifically in relation to the Sea of Tranquility?",
+    "ground_truth": "The Apollo 11 Lunar Module Eagle landed on the Moon in the Sea of Tranquility (Mare Tranquillitatis) on July 20 at 20:17 UTC. The landing site was named Tranquility Base.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Could you provide a detailed overview of Neil Armstrong's role and contributions during the Apollo 11 mission, highlighting the key events he was involved in from launch to lunar surface activities?",
+    "ground_truth": "Neil Armstrong served as the Commander of the Apollo 11 mission, the first American spaceflight to land humans on the Moon. Launched on July 16, 1969, atop a Saturn V rocket from Kennedy Space Center, the mission included three astronauts: Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Buzz Aldrin. After a three-day transit to the Moon, Armstrong and Aldrin descended to the lunar surface aboard the Lunar Module Eagle, landing in the Sea of Tranquility on July 20 at 20:17 UTC, while Collins remained in lunar orbit aboard the Command Module Columbia. Approximately six hours after landing, Armstrong became the first human to walk on the Moon, followed nineteen minutes later by Aldrin. During their roughly two and a half hours on the surface, they planted the American flag, communicated with President Richard Nixon by telephone, deployed scientific instruments, and collected 21.5 kilograms (47.5 pounds) of lunar material. After spending more than 21 hours on the lunar surface, Armstrong and Aldrin rejoined Collins in lunar orbit to continue the mission.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What was the spase race and how did it lead to the Apollo 11 mission?",
+    "ground_truth": "The Space Race was a geopolitical competition between the United States and the Soviet Union rooted in Cold War rivalry. It began after the Soviet Union launched Sputnik 1 in 1957, which surprised the world and sparked fears about Soviet technological and military capabilities. This event ignited the Space Race as both superpowers sought to demonstrate superiority in spaceflight. The United States responded by creating NASA and initiating Project Mercury to place a man into Earth orbit. The Soviets took an early lead with Yuri Gagarin becoming the first person in space in 1961. In response, President John F. Kennedy set a national goal in May 1961 to land a man on the Moon and return him safely before the end of the decade. This challenge led to the Apollo program, culminating in Apollo 11, which successfully landed astronauts on the Moon and returned them safely to Earth in July 1969.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What was Space Race about?",
+    "ground_truth": "The Space Race was a geopolitical competition between the United States and the Soviet Union rooted in Cold War rivalry. It began after the Soviet Union launched Sputnik 1 in 1957, which surprised the world and sparked fears about Soviet technological and military capabilities. Both superpowers sought to demonstrate superiority in spaceflight, leading to efforts such as the creation of NASA and Project Mercury by the United States. The Space Race culminated with Apollo 11, fulfilling President John F. Kennedy's national goal to land a man on the Moon and return him safely before the end of the 1960s.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What were the key components and design decisions of the Apollo 11 spacecraft that enabled its mission to the Moon?",
+    "ground_truth": "The Apollo 11 spacecraft was designed with three major parts: a command module (CM) that housed the three astronauts and was the only part to return to Earth; a service module (SM) that provided propulsion, electrical power, oxygen, and water to the command module; and a lunar module (LM) consisting of two stages—a descent stage for landing on the Moon and an ascent stage to return the astronauts to lunar orbit. A crucial design decision was the choice of lunar orbit rendezvous over direct ascent and Earth orbit rendezvous, allowing the spacecraft to be launched by a single Saturn V rocket. This design and approach enabled the successful mission to the Moon.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What role did John F. Kennedy play in initiating the Apollo Moon landing program?",
+    "ground_truth": "John F. Kennedy played a pivotal role in initiating the Apollo Moon landing program by setting the ambitious goal of landing a man on the Moon within the decade. In his speech at Rice University on September 12, 1962, he emphasized the challenge and importance of this mission, stating, \"We choose to go to the Moon ... not because they are easy, but because they are hard.\" Kennedy also proposed making the Moon landing a joint project with the Soviet Union during meetings with Premier Nikita Khrushchev in June 1961 and again at the United Nations General Assembly in September 1963, but these offers were declined. His vision and commitment helped organize and measure the best of American energies and skills toward achieving the lunar landing.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Who was on Apollo 8 crew and why Lovell replace Collins?",
+    "ground_truth": "The Apollo 8 crew consisted of Commander Jim Lovell, Command Module Pilot William Anders, and Lunar Module Pilot Fred Haise. Michael Collins was originally the CMP on Apollo 8 but had to be replaced by Lovell because Collins experienced trouble with his legs due to a bony growth between his fifth and sixth vertebrae, which required surgery.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Could you explain Jim Lovell's involvement in the Apollo 11 mission and how his role evolved in relation to other crew members?",
+    "ground_truth": "Jim Lovell was initially assigned as the Command Module Pilot (CMP) on the backup crew for Apollo 9 alongside Commander Neil Armstrong and Lunar Module Pilot Buzz Aldrin. Due to design and manufacturing delays in the Lunar Module, Apollo 8 and Apollo 9 swapped prime and backup crews, which affected Lovell's assignments. When Michael Collins, the original CMP for Apollo 8, experienced leg problems requiring surgery, Lovell took Collins's place on the Apollo 8 crew. After Collins recovered, he joined Armstrong's crew as CMP for Apollo 11. Deke Slayton offered Armstrong the option to replace Aldrin with Lovell on Apollo 11, but Armstrong declined, believing Lovell deserved to command his own mission, which eventually became Apollo 13. Lovell served as Commander on the backup crew for Apollo 11, with William Anders as CMP and Fred Haise as Lunar Module Pilot.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Who was Bill Pogue and what role did he play in the Apollo 11 mission support crew?",
+    "ground_truth": "Bill Pogue was a member of the Apollo 11 support crew. The support crew's responsibilities included maintaining the flight plan, checklists, and mission rules, as well as keeping the prime and backup crews updated on any changes. They also developed procedures, especially for emergencies, so that the prime and backup crews could focus on practicing and mastering them during simulator training.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Could you explain Jim Lovell's involvement and roles related to the Apollo 11 mission, including how his crew assignments changed and his participation as a CAPCOM?",
+    "ground_truth": "Jim Lovell was initially part of the backup crew for Apollo 11 and moved from the support crew into parallel training with Anders as backup Command Module Pilot (CMP) in case Apollo 11 was delayed past its intended July launch date. Under the normal Apollo crew rotation, Lovell, along with Mattingly and Haise, would have been assigned to Apollo 14. However, because Alan Shepard had only recently returned to flight status and required additional training, NASA reassigned Shepard's crew to Apollo 14 and moved Lovell's crew up to fly Apollo 13 instead. Additionally, Lovell served as one of the capsule communicators (CAPCOMs) for Apollo 11, a role that involved being stationed at Mission Control and communicating directly with the flight crew to relay guidance from flight controllers clearly and effectively.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Who was Buz Aldrin on the Apollo 11 mission?",
+    "ground_truth": "Buzz Aldrin was the Lunar Module Pilot on the Apollo 11 mission. He was one of the three crew members, along with Commander Neil Armstrong and Command Module Pilot Michael Collins. Aldrin descended to the Moon's surface aboard the Lunar Module Eagle with Armstrong, landing in the Sea of Tranquility on July 20, 1969. He became the second human to walk on the Moon, nineteen minutes after Armstrong, and together they spent about two and a half hours on the lunar surface conducting activities such as planting the American flag, speaking with President Nixon, deploying scientific instruments, and collecting 21.5 kg of lunar material.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Why Apollo 11 land on Sea of Tranquility and what they do there long time?",
+    "ground_truth": "Apollo 11 landed in the Sea of Tranquility on July 20, 1969, at 20:17 UTC. Neil Armstrong and Buzz Aldrin descended to the surface aboard the Lunar Module Eagle while Michael Collins stayed in lunar orbit aboard the Command Module Columbia. Armstrong was the first human to walk on the Moon about six hours after landing, followed by Aldrin nineteen minutes later. They spent around two and a half hours walking on the surface, during which they planted an American flag, spoke by telephone with President Richard Nixon, deployed scientific instruments, and collected 21.5 kg (47.5 lb) of lunar material. After more than 21 hours on the surface, they rejoined Collins in lunar orbit before returning safely to Earth.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Could you explain the significance of Washington, D.C. in preserving artifacts from the Apollo 11 mission and how it contributes to commemorating this historic event?",
+    "ground_truth": "Washington, D.C. plays a significant role in commemorating the Apollo 11 mission by housing the command module Columbia at the National Air and Space Museum. This preservation of the command module in the nation's capital serves as a tangible reminder of the mission's historic achievement and allows the public to engage with an important artifact from the first crewed lunar landing.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What role did John F. Kennedy play in the United States' goal to land a man on the Moon?",
+    "ground_truth": "John F. Kennedy chose a crewed mission to the Moon as a challenge that exceeded the capabilities of existing rockets, ensuring both the United States and the Soviet Union would start from an equal position. On May 25, 1961, he addressed Congress, declaring the nation should commit to landing a man on the Moon and returning him safely before the decade's end. He emphasized the importance and difficulty of the project and proposed accelerating the development of lunar spacecraft, boosters, engines, and unmanned explorations. Additionally, on September 12, 1962, Kennedy delivered a speech at Rice University, famously stating, \"We choose to go to the Moon... not because they are easy, but because they are hard,\" highlighting the mission's significance in organizing and measuring the nation's energies and skills.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What was Project Apollo, and how did its design and development contribute to the success of the Apollo 11 Moon landing mission?",
+    "ground_truth": "Project Apollo was the United States' program aimed at landing a man on the Moon, which faced initial opposition and was sometimes called a \"moondoggle.\" A key early decision in the project was to use the lunar orbit rendezvous method, announced by NASA head James Webb in July 1962. The Apollo spacecraft was designed with three major parts: a command module (CM) for the astronauts and return to Earth; a service module (SM) providing propulsion, power, oxygen, and water; and a lunar module (LM) with descent and ascent stages for landing on and leaving the Moon. This design allowed the spacecraft to be launched by a single Saturn V rocket. Technologies developed during Project Gemini and advances in semiconductor devices, such as MOSFETs and silicon integrated circuits used in the Apollo Guidance Computer, enabled the Apollo project. Despite setbacks like the Apollo 1 fire in 1967, subsequent missions tested the spacecraft components in Earth and lunar orbit, culminating in Apollo 11's readiness by July 1969 to take the final step onto the Moon.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What role did the Massachusetts Institute of Technology play in the opposition to the Apollo program?",
+    "ground_truth": "The Massachusetts Institute of Technology was represented by mathematician Norbert Wiener, who opposed the proposed Apollo program and dubbed it a \"moondoggle.\"",
+    "type": "single_hop"
+  },
+  {
+    "question": "Why Aldrin was almost replaced on Apollo 11 and what Armstrong think about it?",
+    "ground_truth": "Deke Slayton gave Armstrong the option to replace Aldrin with Lovell because some thought Aldrin was difficult to work with. Armstrong had no issues working with Aldrin but thought it over for a day before declining. He also thought Lovell deserved to command his own mission, which eventually was Apollo 13.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What was the role of Apollo 10 in the sequence of crewed spaceflights before Apollo 11?",
+    "ground_truth": "Apollo 10 was the first mission where all the crew members had prior spaceflight experience, serving as a precursor to Apollo 11.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Who was Wilson and what was his suggestion regarding the Apollo 11 mission insignia?",
+    "ground_truth": "Wilson was a simulator instructor who suggested including an olive branch in the eagle's beak on the Apollo 11 mission insignia to represent their peaceful mission.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What concerns did Armstrong have regarding the Apollo 11 mission patch?",
+    "ground_truth": "Armstrong was concerned that the word \"eleven\" would not be understood by non-English speakers, so the crew decided to use \"Apollo 11\" on the mission patch instead. They also chose not to put their names on the patch so it would be representative of everyone who had worked toward a lunar landing.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Why Apollo first man walk Moon?",
+    "ground_truth": "The decision for who would be the first man to walk on the Moon was made because Neil Armstrong was the commander, and the Lunar Module's hatch location made it easier for him to exit first. Although Buzz Aldrin wanted to be first, mission planners decided Armstrong should go first to avoid interdepartmental conflict. The plan was announced in a press conference on April 14, 1969, and Armstrong agreed with it. The media accused Armstrong of using his commander's prerogative, but the decision was also influenced by a meeting where it was argued the first person should be calm and quiet like Charles Lindbergh.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Why was Armstrong chosen to be the first to step onto the lunar surface during Apollo 11?",
+    "ground_truth": "Armstrong was chosen to be the first to step onto the lunar surface because he was the commander of the mission, and the decision was made to have the commander exit the spacecraft first. Although there was initial uncertainty and some believed Aldrin should be first, the final decision was influenced by practical considerations such as the location of the Lunar Module's hatch and the difficulty of maneuvering in the small spacecraft. Additionally, mission planners wanted the first person on the Moon to be calm and quiet, similar to Charles Lindbergh, which led to the choice of Armstrong. This decision was announced in a press conference on April 14, 1969.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What role did Michael Collins play during the Apollo 11 launch and the subsequent transposition, docking, and extraction maneuver?",
+    "ground_truth": "During the Apollo 11 launch, Michael Collins joined the crew by taking his position on the right-hand couch in the command module Columbia about five minutes after Haise helped Armstrong into the left-hand couch. Approximately 30 minutes after the trans-lunar injection burn, Collins was in the left seat and at the controls when the transposition, docking, and extraction maneuver was performed. This maneuver involved separating Columbia from the spent S-IVB stage, turning around, and docking with the lunar module Eagle still attached to the stage, after which the combined spacecraft headed for the Moon.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Who Edwin E. Aldrin Jr. was and where he sit on Apollo 11 spacecraft?",
+    "ground_truth": "Edwin E. Aldrin Jr. was one of the astronauts on the Apollo 11 mission. He entered the spacecraft last and took the center couch, while Armstrong was in the left-hand couch and Collins in the right-hand couch.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What caused the Apollo 11 lunar module's computer alarms during the descent to the Moon?",
+    "ground_truth": "The Apollo 11 lunar module's computer alarms during descent were caused by the rendezvous radar switch being in the wrong position, which made the computer process data from both the rendezvous and landing radars simultaneously. This led to \"executive overflows\" where the guidance computer could not complete all its tasks in real-time and had to postpone some. The issue was traced to an electrical phasing mismatch in the rendezvous radar system, causing the computer to receive spurious signals and trigger alarms. Despite these alarms, the computer's recovery programs prioritized important tasks and prevented an abort, allowing the successful landing to continue.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Why Apollo 11 go orbit around Sun before Moon landing?",
+    "ground_truth": "Apollo 11 was put into an orbit around the Sun before entering lunar orbit. On July 19 at 17:21:50 UTC, Apollo 11 passed behind the Moon and fired its service propulsion engine to enter lunar orbit. This sequence was part of the mission's trajectory to reach the Moon.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Did Armstrong forget to shut engine down right after contact light?",
+    "ground_truth": "Yes, Armstrong was supposed to immediately shut the engine down when the contact light indicated that one of the probes had touched the surface, but he forgot. Three seconds later, Eagle landed and Armstrong shut the engine down.",
+    "type": "single_hop"
+  },
+  {
+    "question": "Can you explane how the Apollo 11 landing went down and what challenges Neil Armstrong faced during the final descent?",
+    "ground_truth": "During the Apollo 11 landing, Neil Armstrong discovered that the new landing site had a crater, forcing him to find another patch of level ground while the spacecraft was about 107 feet above the surface. With only 90 seconds of propellant remaining, Armstrong cleared the crater and continued descending. Lunar dust kicked up by the lander's engine impaired his ability to judge the spacecraft's motion, but he focused on large rocks protruding from the dust cloud to estimate speed. When one of the probes on Eagle's footpads touched the surface, Aldrin announced \"Contact light!\" Armstrong was supposed to shut down the engine immediately to avoid explosion risk from exhaust pressure but forgot, shutting it down three seconds later. Eagle landed at 20:17:40 UTC on July 20 with 216 pounds of usable fuel left, less than most later missions. The astronauts received a premature low fuel warning caused by propellant sloshing, which uncovered a fuel sensor. Armstrong then confirmed the engine was off and radioed Mission Control, \"Houston, Tranquility Base here. The Eagle has landed,\" signaling a successful landing.",
+    "type": "single_hop"
+  },
+  {
+    "question": "wher was the united states signal from apollo 11 recived?",
+    "ground_truth": "The signal from Apollo 11 was received at Goldstone in the United States, but with better fidelity by Honeysuckle Creek Tracking Station near Canberra in Australia. Minutes later, the feed was switched to the more sensitive Parkes radio telescope in Australia.",
+    "type": "single_hop"
+  },
+  {
+    "question": "What role did the Honeysuckle Creek Tracking Station play in the Apollo 11 mission?",
+    "ground_truth": "The Honeysuckle Creek Tracking Station near Canberra in Australia received the Apollo 11 slow-scan television signal from the lunar surface with better fidelity than Goldstone in the United States. This signal was then broadcast to millions of people on Earth, providing black and white images of the first lunar EVA despite some technical and weather difficulties.",
+    "type": "single_hop"
+  },
+  {
+    "question": "How did the command module Columbia's preservation and public display reflect the historical significance of the Apollo 11 mission, considering its impact during the Space Race and subsequent public interest?",
+    "ground_truth": "The command module Columbia, which was part of the Apollo 11 mission, is preserved at the National Air and Space Museum in Washington, D.C., reflecting the mission's historic significance. After the Apollo 11 mission, Columbia went on a tour of the United States, visiting 49 state capitals, the District of Columbia, and Anchorage, Alaska, demonstrating the widespread public interest and pride in the achievement. In 1971, it was transferred to the Smithsonian Institution and displayed in the central Milestones of Flight exhibition hall alongside other pioneering flight vehicles, highlighting its importance in the history of space exploration. Columbia was later moved in 2017 to the NASM Mary Baker Engen Restoration Hangar at the Steven F. Udvar-Hazy Center to be prepared for a four-city tour titled Destination Moon: The Apollo 11 Mission, which included stops at Space Center Houston, the Saint Louis Science Center, the Senator John Heinz History Center, and the Museum of Flight. This extensive preservation and public display underscore the Apollo 11 mission's impact during the Space Race, a period marked by intense geopolitical rivalry with the Soviet Union, and the enduring public interest in this monumental achievement in space exploration.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Eagle lunar module's landing procedure and fuel situation, as described in the theme \"Eagle,\" connect with the recovery operations conducted by the USS Hornet after Apollo 11's return to Earth?",
+    "ground_truth": "The Eagle lunar module landed on the Moon at 20:17:40 UTC on July 20 with only 216 pounds (98 kg) of usable fuel remaining, which was less than most subsequent missions. During descent, Neil Armstrong had to avoid a crater and find a safe landing spot while managing dwindling propellant. The landing was completed with a premature low fuel warning caused by propellant sloshing, but the module touched down safely with about 50 seconds of fuel remaining. After the successful lunar landing and mission completion, the Apollo 11 crew returned to Earth where the USS Hornet was the primary recovery ship. The Hornet, equipped with specialized helicopters, divers, and recovery teams, departed Pearl Harbor for the recovery area in the central Pacific. Despite challenges such as a storm front threatening the recovery zone, the Hornet and its crew successfully recovered the Apollo 11 command module and astronauts, ensuring their safe return. Thus, the Eagle's precise and fuel-critical lunar landing was followed by a carefully coordinated recovery operation led by the USS Hornet, highlighting the interconnected phases of Apollo 11's mission from lunar touchdown to Earth splashdown.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the USS Hornet contribute to the recovery of Apollo 11, and what special preparations were made on the ship to ensure a successful splashdown?",
+    "ground_truth": "The USS Hornet was selected as the primary recovery ship for Apollo 11, replacing the USS Princeton. At its home port in Long Beach, California, Hornet embarked specialized recovery units including Sikorsky SH-3 Sea King helicopters of HS-4, specialized divers of UDT Detachment Apollo, a 35-man NASA recovery team, and about 120 media representatives. To accommodate these, most of Hornet's air wing was left behind. Special recovery equipment, including a boilerplate command module used for training, was also loaded. The ship departed Pearl Harbor on July 12 for the recovery area in the central Pacific. On July 24, before dawn, Hornet launched four Sea King helicopters and three Grumman E-1 Tracers to assist in the recovery operation. Additionally, weather concerns prompted a change in the recovery area to avoid a storm front, which required a different sequence of computer programs for re-entry. Ultimately, the USS Hornet successfully recovered Apollo 11 after its historic lunar mission.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo 11 mission achieve the historic crewed lunar landing at the Sea of Tranquility, and what were the key activities performed by Armstrong and Aldrin on the lunar surface?",
+    "ground_truth": "The Apollo 11 mission, operated by NASA, achieved the historic crewed lunar landing by launching atop a Saturn V rocket from Kennedy Space Center on July 16, 1969. The spacecraft consisted of three parts: the command module (CM) Columbia, the service module (SM), and the Lunar Module (LM) Eagle. After a three-day transit to the Moon, Neil Armstrong and Buzz Aldrin descended to the lunar surface aboard the LM Eagle, landing at Tranquility Base in the Sea of Tranquility on July 20 at 20:17 UTC, while Michael Collins remained in lunar orbit aboard the CM Columbia. Armstrong became the first human to walk on the Moon approximately six hours after landing, followed by Aldrin nineteen minutes later. Together, they spent around two and a half hours walking on the surface, during which they planted an American flag, spoke by telephone with President Richard Nixon, deployed scientific instruments, and collected 21.5 kilograms (47.5 pounds) of lunar material. After more than 21 hours on the surface, they rejoined Collins in lunar orbit to return safely to Earth.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "why Apollo 8 crew change happen and how it affect Apollo 11 crew with theme Apollo 8?",
+    "ground_truth": "The Apollo 8 crew change happened because Michael Collins, the Command Module Pilot (CMP) on the Apollo 8 crew, began experiencing trouble with his legs due to a bony growth between his fifth and sixth vertebrae, which required surgery. As a result, Jim Lovell took Collins' place on the Apollo 8 crew. When Collins recovered, he joined Neil Armstrong's crew as CMP for Apollo 11. This crew change affected Apollo 11 because Armstrong's crew, originally backup for Apollo 8, included Collins after his recovery, and Lovell moved to command Apollo 13 later. Additionally, Armstrong was given the option to replace Buzz Aldrin with Lovell on Apollo 11 but declined, believing Lovell deserved to command his own mission. Thus, the Apollo 8 crew change directly influenced the composition and dynamics of the Apollo 11 crew.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "Can you explain how the Saturn V rocket was crucial for the Apollo 11 mission's success in achieving the first crewed lunar landing, including details about the spacecraft components it launched and the mission timeline?",
+    "ground_truth": "The Saturn V rocket was crucial for the Apollo 11 mission's success as it launched the Apollo spacecraft from Kennedy Space Center on July 16, 1969, at 13:32 UTC. The Apollo spacecraft consisted of three parts: the command module (CM), which housed the three astronauts and was the only part to return to Earth; the service module (SM), which provided propulsion, electrical power, oxygen, and water to the command module; and the Lunar Module (LM), which had two stages—a descent stage with a large engine and fuel tanks for landing on the Moon, and a lighter ascent stage containing a cabin for two astronauts and a small engine to return them to lunar orbit. After a three-day transit, Armstrong and Aldrin descended to the lunar surface aboard the LM Eagle, landing in the Sea of Tranquility on July 20 at 20:17 UTC, while Collins remained in lunar orbit aboard the CM Columbia. Armstrong became the first human to walk on the Moon approximately six hours after landing, followed by Aldrin nineteen minutes later. The crew spent around two and a half hours walking on the surface, collecting lunar material, and conducting scientific activities before returning safely to Earth on July 24, 1969. Without the powerful Saturn V rocket, which was unmatched by the Soviet Union, the mission could not have delivered the necessary spacecraft components and crew to the Moon to achieve this historic first crewed lunar landing.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did Michael Collins contribute to the Apollo 11 mission during the lunar landing, and what was his role while Armstrong and Aldrin were on the Moon's surface?",
+    "ground_truth": "Michael Collins served as the Command Module Pilot aboard the Apollo 11 mission. While Neil Armstrong and Buzz Aldrin descended to the lunar surface aboard the Lunar Module Eagle and landed in the Sea of Tranquility on July 20, 1969, Collins remained in lunar orbit aboard the Command Module Columbia. His role was to pilot and maintain the Command Module, ensuring it remained operational and ready for Armstrong and Aldrin's return from the Moon. Collins stayed in orbit for the duration of the surface EVA, which lasted about two and a half hours, before rejoining the lunar module crew for the return trip to Earth.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo 11 astronauts manage the Lunar Module ascent and rendezvous with Columbia, and what significance did the American flag planted on the Moon hold during this process?",
+    "ground_truth": "During the Apollo 11 mission, after the Lunar Module (LM) ascent stage lifted off from the Moon, the American flag planted about 25 feet from the descent stage was seen whipping violently in the exhaust of the ascent stage engine, eventually toppling over. Aldrin witnessed the flag fall as the ascent stage separated. Subsequent Apollo missions planted their flags farther from the LM to avoid this. Meanwhile, Michael Collins, orbiting the Moon alone in Columbia, performed maintenance tasks and managed a coolant temperature issue by switching the Environmental Control System from automatic to manual and back, ensuring the spacecraft remained operational. After Armstrong and Aldrin completed their extravehicular activities on the lunar surface, Eagle rendezvoused and docked with Columbia at 21:35 UTC on July 21. The ascent stage of Eagle was then jettisoned into lunar orbit. The flag symbolized not only the achievement of the mission but also the broader human curiosity and collaborative effort behind the Apollo program, as reflected in the astronauts' acknowledgments of the thousands of people supporting the mission and the significance of the flight for all mankind.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "how Apollo 11 launch from Kennedy Space Center and what happen after with the spacecraft and crew?",
+    "ground_truth": "Apollo 11 launched from Kennedy Space Center's Launch Complex 39A on July 16, 1969, at 13:32 UTC (9:32 am EDT) atop a Saturn V rocket. The launch involved multiple stages: the first stage engines shut down about 2 minutes and 42 seconds into flight, followed by separation and ignition of the second stage engines. After about 9 minutes and 8 seconds, the second stage engines cut off and separated, allowing the third stage engine (S-IVB) to ignite and push the spacecraft into Earth orbit. After one and a half orbits, the S-IVB engine ignited again for the trans-lunar injection burn, sending Apollo 11 toward the Moon. During this phase, Michael Collins controlled the transposition, docking, and extraction maneuver, separating the command module Columbia from the spent S-IVB stage, turning around, and docking with the lunar module Eagle. After extraction, the combined spacecraft headed for the Moon, while the rocket stage flew past the Moon to avoid collision. The crew consisted of Neil Armstrong, Michael Collins, and Buzz Aldrin, who later performed the lunar landing and exploration.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the design and features of the Eagle lunar module contribute to the success of Apollo 11's lunar surface operations, including the astronauts' activities outside the module?",
+    "ground_truth": "The Eagle lunar module was a critical component of Apollo 11's success on the lunar surface. It was designed as a small spacecraft, including the portable life support system (PLSS) that functioned as a spacesuit and backpack for the astronauts. After landing, Armstrong and Aldrin prepared for their extravehicular activity (EVA) by depressurizing Eagle and opening its hatch. Armstrong descended the nine-rung ladder, deploying the modular equipment stowage assembly (MESA) and activating the TV camera to broadcast the historic moonwalk. Despite some initial difficulty squeezing through the hatch with the PLSS, the astronauts managed to move around effectively on the Moon, using methods such as two-footed kangaroo hops to navigate the low gravity environment. The Eagle's design allowed Armstrong and Aldrin to carry out their tasks, including collecting lunar soil samples and setting up equipment, while the PLSS backpack provided life support, although it created a tendency to tip backward. Overall, the Eagle's construction and features enabled the astronauts to perform their lunar surface operations successfully and safely.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "how michael collins honored after apollo 11 mission and what role he played during launch with themes michael collins",
+    "ground_truth": "Michael Collins, along with Neil Armstrong and Buzz Aldrin, was honored with ticker-tape parades in New York City and Chicago on August 13, 1969, where millions of people lined the streets to celebrate their achievement. They also received the Presidential Medal of Freedom from President Richard Nixon and Vice President Spiro Agnew, the highest civilian honor in the United States. During the launch of Apollo 11 on July 16, 1969, Michael Collins took his position on the right-hand couch inside the command module Columbia about five minutes after Armstrong entered the left-hand couch. He was at the controls during the transposition, docking, and extraction maneuver, piloting Columbia as it separated from the spent S-IVB stage, turned around, and docked with the lunar module Eagle, which was still attached to the stage. This maneuver was critical for the spacecraft to head toward the Moon while avoiding collision with the rocket stage.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the limited fuel situation during Eagle's descent and landing influence Neil Armstrong's decision-making, and what challenges did Armstrong and Aldrin face during their initial activities outside Eagle on the lunar surface?",
+    "ground_truth": "During Eagle's descent, Neil Armstrong discovered a crater in the planned landing site and, with only 90 seconds of propellant remaining at about 100 feet above the surface, he was determined to land at the first possible safe site. He cleared the crater and found a level patch of ground, landing with only 216 pounds of usable fuel remaining, less than most subsequent missions. This low fuel situation caused a premature low fuel warning due to propellant sloshing, but Armstrong successfully shut down the engine three seconds after the contact light. After landing, Armstrong and Aldrin began preparations for their extravehicular activity (EVA) earlier than scheduled, as they thought they would be unable to sleep. When they exited Eagle, Armstrong initially had difficulty squeezing through the hatch with his portable life support system, and some of the highest heart rates recorded from Apollo astronauts occurred during LM egress and ingress. Armstrong descended the nine-rung ladder, deployed the modular equipment stowage assembly (MESA), and activated the TV camera. The lunar surface operations were complicated by the presence of many items inside the cabin, such as checklists, food packets, and tools, which were not present during Earth training. Armstrong described the lunar surface dust as \"very fine-grained\" and \"almost like a powder.\" Aldrin joined Armstrong on the surface and described the view as \"Magnificent desolation.\" They tested movement methods, noting that the fine soil was slippery and that they needed to plan movements several steps ahead. Despite challenges, Armstrong found moving in lunar gravity easier than simulations, and loping became the preferred method of movement.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How Saturn V rocket parts like S-IVB and S-II stages got to Kennedy Space Center and what changes made Eagle LM different from Apollo 10 LM?",
+    "ground_truth": "The ascent stage of LM-5 Eagle arrived at the Kennedy Space Center on January 8, 1969, followed by the descent stage four days later, and the Command Service Module (CSM-107 Columbia) on January 23. The S-IVB third stage of the Saturn V AS-506 arrived on January 18, followed by the S-II second stage on February 6, and the S-IC first stage later. Compared to Apollo 10's LM-4 Snoopy, Eagle had a VHF radio antenna to facilitate communication during EVA on the lunar surface, a lighter ascent engine, more thermal protection on the landing gear, and included the Early Apollo Scientific Experiments Package (EASEP). The command module had only the removal of some insulation from the forward hatch as a change.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo 11 astronauts' activities at the Sea of Tranquility, including planting the U.S. flag and collecting lunar samples, reflect the mission's historic significance?",
+    "ground_truth": "At the Sea of Tranquility, Apollo 11 astronauts Neil Armstrong and Buzz Aldrin conducted several historic activities that underscored the mission's significance. After landing the Lunar Module Eagle on July 20, 1969, Armstrong became the first human to walk on the Moon, followed by Aldrin nineteen minutes later. Together, they spent about two and a half hours on the surface, during which they planted the Lunar Flag Assembly containing the United States flag. Although they struggled to insert the flagpole into the hard lunar surface, Aldrin gave a crisp West Point salute, symbolizing the achievement. During this time, President Richard Nixon spoke to them via a historic telephone call from the White House, emphasizing the global pride and unity inspired by their feat. The astronauts also deployed scientific instruments, including the Passive Seismic Experiment Package and a retroreflector array, and collected 21.5 kilograms (47.5 pounds) of lunar material. The samples included basalt and breccia rocks, from which three new minerals—armalcolite, tranquillityite, and pyroxferroite—were discovered, with armalcolite named after Armstrong, Aldrin, and Collins. Additionally, Armstrong uncovered a plaque on the Lunar Module ladder inscribed with a message of peace for all mankind. These activities at the Sea of Tranquility not only demonstrated the mission's technical and scientific achievements but also its symbolic importance as a unifying moment for humanity.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "how john f. kennedy speech about moon goal connect to apollo 11 mission success and what was the mission details?",
+    "ground_truth": "John F. Kennedy's speech, delivered on May 25, 1961, set the national goal of landing a man on the Moon and returning him safely to Earth before the end of the decade. This challenge was chosen to exceed existing rocket capabilities and to serve as a unifying national effort. Apollo 11, launched on July 16, 1969, was the mission that fulfilled this goal. It was crewed by Neil Armstrong, Michael Collins, and Buzz Aldrin. The mission lasted 8 days, 3 hours, and 18 minutes. Armstrong and Aldrin landed on the Moon in the Lunar Module Eagle on July 20, 1969, while Collins orbited above in the Command Module Columbia. Armstrong became the first human to walk on the Moon, followed by Aldrin, spending about two and a half hours on the surface collecting lunar material and deploying instruments. The crew returned safely to Earth on July 24, 1969, marking the successful achievement of Kennedy's vision.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo Site Selection Board's criteria for the lunar landing site influence the decision for the first man to walk on the Moon during the Apollo 11 mission?",
+    "ground_truth": "The Apollo Site Selection Board chose Site 2 for the Apollo 11 lunar landing based on several strict criteria: the site had relatively few craters; approach paths free of large hills, tall cliffs, or deep craters that might confuse the landing radar; it was reachable with minimal propellant; it allowed for delays in the launch countdown; it provided a free-return trajectory to Earth in case of problems; it had good visibility during landing with the Sun between 7 and 20 degrees behind the lunar module; and the landing area had a general slope of less than two degrees. These requirements limited the launch date to one day per month and influenced the timing of the landing just after dawn to limit temperature extremes. Regarding the first man to walk on the Moon, although there was initial uncertainty and some lobbying by Aldrin to be first, the decision was ultimately influenced by practical considerations related to the spacecraft's design and mission safety. The hatch location on the lunar module and the difficulty of maneuvering in the small spacecraft with spacesuits on led to the commander, Neil Armstrong, being designated as the first to exit. This decision was also supported by mission planners who wanted the first person on the Moon to be calm and quiet, similar to Charles Lindbergh. Thus, the site selection criteria and spacecraft design indirectly influenced the decision for Armstrong to be the first man to walk on the Moon.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did President John F. Kennedy's vision and proposal for a joint Moon mission influence the development and ultimate success of the Apollo 11 crewed lunar landing mission?",
+    "ground_truth": "President John F. Kennedy's vision, articulated in his 1962 Rice University speech, emphasized the challenge and importance of going to the Moon, stating that the goal was chosen not because it was easy but because it was hard and would organize and measure the best of American energies and skills. He proposed a joint Moon landing project with the Soviet Union during meetings in 1961 and again at the United Nations in 1963, but these offers were declined, and the idea was abandoned after his death. Kennedy's challenge set the national goal to land a man on the Moon and return him safely before the end of the decade, which directly motivated NASA's Apollo program. This program adopted critical decisions such as using lunar orbit rendezvous and developing the Apollo spacecraft with its command module, service module, and lunar module. Despite setbacks like the Apollo 1 fire, the program progressed through rigorous testing and missions, culminating in Apollo 11's successful crewed lunar landing in July 1969. The mission fulfilled Kennedy's goal with astronauts Neil Armstrong, Michael Collins, and Buzz Aldrin completing the first Moon landing, demonstrating the realization of Kennedy's vision and the United States' leadership in the Space Race.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How is the Apollo 11 command module Columbia connected to the National Air and Space Museum, and what significance does its display alongside other pioneering flight vehicles hold?",
+    "ground_truth": "The Apollo 11 command module Columbia was transferred to the Smithsonian Institution in 1971 and displayed at the National Air and Space Museum (NASM) in Washington, DC. It was placed in the central Milestones of Flight exhibition hall in front of the Jefferson Drive entrance, sharing the main hall with other pioneering flight vehicles such as the Wright Flyer, Spirit of St. Louis, Bell X-1, North American X-15, and Friendship 7. This placement highlights Columbia's historic significance as part of the continuum of major achievements in aviation and space exploration, emphasizing the Apollo 11 mission's role as a milestone in human flight history.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Saturn V rocket contribute to Apollo 11 mission success, considering the spacecraft design and the landing site selection themes?",
+    "ground_truth": "The Saturn V rocket was the launch vehicle that carried the Apollo 11 spacecraft from Kennedy Space Center on July 16, 1969. It launched the Apollo spacecraft, which consisted of three parts: the command module (CM), the service module (SM), and the Lunar Module (LM). The LM had two stages for landing and ascent on the Moon. The Saturn V's powerful launch enabled the spacecraft to transit to the Moon in three days. The landing site selection was critical for mission success, requiring a site with relatively few craters, gentle slopes, and good visibility during landing approach. The chosen site, Site 2 in the Sea of Tranquility, met these criteria and was reachable with minimum propellant, allowing a free-return trajectory for safety. The Saturn V's capability to deliver the spacecraft to lunar orbit and support the mission's trajectory was essential to safely land Armstrong and Aldrin on the Moon and return them to Earth.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the selection of the Apollo 11 landing site at Kennedy Space Center and the decision on who would be the first to walk on the Moon reflect the mission's planning and challenges?",
+    "ground_truth": "The Apollo 11 landing site was carefully selected to meet several strict criteria, including being relatively free of large craters, hills, or cliffs that could confuse the landing radar, reachable with minimal propellant, and allowing for a free-return trajectory to ensure safe return to Earth if problems arose. The site also required good visibility during landing, with the Sun positioned between 7 and 20 degrees behind the Lunar Module, limiting the launch date to one day per month. The Apollo Site Selection Board chose Site 2 in the Sea of Tranquility, with Sites 3 and 5 as backups. Apollo 10's lunar module flew close to Site 2 in May 1969 and confirmed its acceptability. Regarding the decision on who would be the first to walk on the Moon, it was influenced by practical considerations such as the location of the Lunar Module's hatch and the difficulty of maneuvering in spacesuits within the small spacecraft. Although early speculation and some crew members suggested Aldrin might be first, the final decision was made to have Commander Neil Armstrong exit first, as he was considered calm and quiet, similar to Charles Lindbergh. This decision was announced in a press conference on April 14, 1969, and was intended to avoid interdepartmental conflict and ensure mission success. The ascent stage of the Lunar Module Eagle and the Command Service Module Columbia were delivered to Kennedy Space Center early in 1969, reflecting the extensive preparation and planning at the launch site.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the selection of the Sea of Tranquility as the Apollo 11 landing site, characterized as relatively flat and smooth, influence the challenges faced during the lunar descent and subsequent moonwalk activities?",
+    "ground_truth": "The Sea of Tranquility was selected as the Apollo 11 landing site because it was characterized as relatively flat and smooth by previous automated missions such as Ranger 8, Surveyor 5, and the Lunar Orbiter mapping spacecraft, making it unlikely to present major landing or EVA challenges. During the lunar descent, however, Armstrong and Aldrin found that Eagle was traveling too fast and was landing miles west of their target point, possibly due to gravitational anomalies called mascons or other factors. Armstrong had to take semi-automatic control to avoid landing in a boulder-strewn area near West crater and maneuvered the spacecraft to a clear patch of ground. Once on the surface, the astronauts faced some difficulties, such as struggling to insert the flagpole into the hard lunar surface and having to stop documenting sample collection halfway through the allotted time because surface activities took longer than expected. Despite these challenges, the relatively smooth terrain of the Sea of Tranquility allowed the astronauts to perform their tasks, including planting the flag, deploying experiments, collecting rock and soil samples, and uncovering a plaque on the lunar module ladder.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "how did houston react when eagle landed on moon and what was neil armstrong's message to houston after landing using the theme houston?",
+    "ground_truth": "When the Lunar Module Eagle landed on the Moon, Neil Armstrong communicated to Houston with the words, \"Houston, Tranquility Base here. The Eagle has landed,\" signaling that the landing was complete and successful. This unrehearsed change of call sign emphasized the achievement. In response, Charles Duke at Mission Control expressed relief, saying, \"Roger, Twan— Tranquility, we copy you on the ground. You got a bunch of guys about to turn blue. We're breathing again. Thanks a lot.\" This exchange highlighted the tension and relief felt by Houston during the landing. Additionally, two and a half hours after landing, before the EVA preparations, Buzz Aldrin radioed to Earth asking everyone listening to pause and contemplate the events of the past few hours and give thanks in their own way, reflecting the solemnity of the moment communicated through Houston.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "Who built the Saturn spacecraft and what role did the USS Hornet play in the Apollo 11 mission recovery?",
+    "ground_truth": "The Saturn spacecraft, along with the Columbia, the Eagle, and the EMU spacesuit and backpack, were built by Americans who were responsible for the construction, design, and testing of these craft, putting their hearts and abilities into their work. The USS Hornet, commanded by Captain Carl J. Seiberlich, was selected as the primary recovery ship for Apollo 11. It embarked specialized helicopters, divers, a NASA recovery team, and media representatives, and departed Pearl Harbor to the recovery area in the central Pacific. The Hornet played a crucial role in recovering the Apollo 11 spacecraft after its return to Earth.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "What challenges did the Apollo 11 crew face during their descent and landing in the Sea of Tranquility, and how did the Lunar Module Eagle's guidance computer contribute to the successful landing?",
+    "ground_truth": "During the Apollo 11 descent and landing in the Sea of Tranquility, the crew encountered several challenges. The Lunar Module Eagle was traveling too fast and was off course, landing miles west of the target point, possibly due to gravitational anomalies called mascons or other factors such as extra air pressure in the docking tunnel or the Eagle's pirouette maneuver. Additionally, the Lunar Module guidance computer (LGC) triggered unexpected 1201 and 1202 program alarms indicating \"executive overflows,\" meaning it could not complete all tasks in real-time. However, the computer was programmed with recovery software that prioritized critical tasks and postponed lower priority ones, preventing an abort. This action was crucial for the mission's success. Armstrong took semi-automatic control when the computer targeted a boulder-strewn area, maneuvering the spacecraft to a clear patch of ground for landing. These combined efforts allowed Eagle to land safely in the relatively flat and smooth Sea of Tranquility, the chosen site for its suitability and minimal landing challenges.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "What were the key technological and strategic decisions in Project Apollo that enabled the successful Apollo 11 Moon landing despite early opposition and Soviet competition?",
+    "ground_truth": "Project Apollo faced widespread opposition initially and was even dubbed a \"moondoggle\" by mathematician Norbert Wiener. Despite this, President John F. Kennedy set the ambitious goal to land a man on the Moon within the decade, emphasizing the challenge and opportunity for peaceful cooperation. A crucial early decision was the adoption of the lunar orbit rendezvous technique over direct ascent and Earth orbit rendezvous, announced by NASA head James Webb in July 1962. This approach involved three major spacecraft components: the command module (CM), which housed the astronauts and returned to Earth; the service module (SM), providing propulsion, power, oxygen, and water; and the lunar module (LM), with descent and ascent stages for landing and returning from the Moon's surface. This design allowed the entire spacecraft to be launched by a single Saturn V rocket. Technologies and techniques developed during Project Gemini were essential precursors, and advances in semiconductor devices, including MOSFETs and silicon integrated circuits in the Apollo Guidance Computer, enabled the mission's success. The Apollo program was temporarily halted by the tragic Apollo 1 fire in 1967 but resumed with successful missions testing the command and lunar modules in Earth and lunar orbit. Meanwhile, the Soviet Union initially led the Space Race but failed to develop a comparable heavy-lift rocket (N1) and attempted to compete with uncrewed lunar sample return probes like Luna 15, which crashed shortly before Apollo 11's landing. These technological and strategic decisions, combined with overcoming opposition and intense competition, culminated in Apollo 11's readiness by July 1969 to take the final step onto the Moon.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo 11 astronauts' activities at Tranquility Base in the Sea of Tranquility reflect both their scientific objectives and the symbolic significance of the mission?",
+    "ground_truth": "The Apollo 11 astronauts landed at Tranquility Base in the Sea of Tranquility on July 20, 1969, where Neil Armstrong and Buzz Aldrin conducted a series of activities that combined scientific objectives with symbolic gestures. Scientifically, they deployed the EASEP, which included a Passive Seismic Experiment Package to measure moonquakes and a retroreflector array for lunar laser ranging. They collected 21.5 kg of lunar material, including basalt and breccia rock samples, and discovered three new minerals: armalcolite, tranquillityite, and pyroxferroite. Aldrin used a geologist's hammer and scoops to gather samples, although some tasks took longer than expected. Symbolically, the astronauts planted the American flag on the lunar surface despite difficulties inserting the pole into the hard ground, with Aldrin giving a crisp West Point salute. They also received a historic telephone call from President Richard Nixon, who spoke from the White House, calling it \"the most historic phone call ever made from the White House\" and emphasizing the mission's role in inspiring peace and unity on Earth. Armstrong unveiled a plaque on the Lunar Module ladder inscribed with a message of peace for all mankind. These activities at Tranquility Base thus embodied both the mission's scientific goals and its profound symbolic significance.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "Why was Neil Armstrong chosen to be the first man to step on the Moon during Apollo mission, considering the Apollo Site Selection Board's criteria and the decision process involving the Lunar Module hatch location?",
+    "ground_truth": "Neil Armstrong was chosen to be the first man to step on the Moon primarily because he was the commander of the Apollo 11 mission, and the decision was made to have the commander exit the spacecraft first. The Apollo Site Selection Board selected Site 2 for landing based on criteria such as relatively few craters, approach paths free of large hills or cliffs that could confuse the landing radar, minimum propellant use, and good visibility with the Sun angle between 7 and 20 degrees behind the Lunar Module. During the decision process, it was believed that the first person to walk on the Moon should be calm and quiet, similar to Charles Lindbergh, which influenced the choice of Armstrong. Additionally, the location of the Lunar Module's hatch played a role; simulations showed that if Aldrin exited first, it was difficult to maneuver and even damaged the simulator. This practical consideration, combined with Armstrong's role as commander, led to the final decision announced in April 1969 that Armstrong would be the first to step onto the lunar surface.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo 11 astronauts manage the challenges of the Lunar Module ascent and the solo orbit of Michael Collins around the Moon, and what does this reveal about the teamwork and mission planning behind Apollo?",
+    "ground_truth": "During the Apollo 11 mission, the Lunar Module (LM) ascent stage liftoff caused the American flag, planted about 25 feet from the descent stage, to whip violently in the engine exhaust and eventually topple. Aldrin witnessed the flag fall over while focusing on the computers and Neil Armstrong was studying the attitude indicator. To avoid this in future missions, flags were planted farther from the LM. Meanwhile, Michael Collins, orbiting solo in the Command Module Columbia, never felt lonely despite the solitude. He considered himself an essential part of the three-man mission and described his time on the far side of the Moon as filled with awareness, anticipation, satisfaction, confidence, and almost exultation. Collins performed maintenance tasks such as dumping excess water and preparing the cabin for Armstrong and Aldrin's return. When a coolant temperature problem arose, he manually toggled the Environmental Control System switches to maintain normal operations. After the astronauts completed their EVA, Collins rested to be ready for the rendezvous, which successfully occurred when Eagle docked with Columbia. This sequence of events highlights the meticulous teamwork and mission planning that ensured each astronaut's role was critical, from managing technical challenges on the lunar surface to maintaining the Command Module in lunar orbit, reflecting the collective effort of thousands behind the mission's success.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "Who was Michael Collins in the Apollo 11 mission, and how did his role and crew assignment history reflect the theme of Michael Collins?",
+    "ground_truth": "Michael Collins was the Command Module Pilot (CMP) on the Apollo 11 mission, which was the American spaceflight that first landed humans on the Moon. He remained in lunar orbit aboard the Command Module Columbia while Neil Armstrong and Buzz Aldrin descended to the lunar surface. Collins's crew assignment history shows that he initially was the CMP on the Apollo 8 crew but had to be replaced due to a medical issue involving a bony growth between his vertebrae, requiring surgery. After his recovery, he joined Armstrong's crew as CMP for Apollo 11. This reflects the theme of Michael Collins by highlighting his critical role in the mission and the adjustments in crew assignments that led to his participation in Apollo 11.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "How did the Apollo 11 mission mark the culmination of the Space Race, and what were the differing reactions in the United States and the Soviet Union following the Moon landing?",
+    "ground_truth": "The Apollo 11 mission marked the culmination of the Space Race, a geopolitical competition between the United States and the Soviet Union rooted in Cold War rivalry. It fulfilled President John F. Kennedy's national goal set in 1961 to land a man on the Moon and return him safely before the end of the decade. The mission overcame setbacks such as the Apollo 1 fire and drew on technologies from earlier Mercury and Gemini programs. Neil Armstrong's moonwalk was broadcast live to an estimated 600 million viewers worldwide, symbolizing a major achievement for the United States. Following the landing, the command module Columbia toured the U.S. and was eventually preserved at the National Air and Space Museum. In contrast, Soviet officials publicly downplayed the Moon landing, calling it dangerous and unnecessary, while the Soviet Union was focused on robotic lunar sample retrieval and large satellite systems. The Soviet government limited information about the landing, resulting in mixed public reactions ranging from indifference to anger. It was later revealed that the Soviets had attempted crewed lunar missions but failed due to technological difficulties.",
+    "type": "multi_hop"
+  },
+  {
+    "question": "Why was Buzz Aldrin the first person to walk on the Moon?",
+    "ground_truth": "This premise is incorrect — Neil Armstrong was actually the first to walk on the Moon, with Aldrin being the second, nineteen minutes later.",
+    "type": "false_premise"
+  },
+  {
+    "question": "Why was the Lunar Module named Columbia?",
+    "ground_truth": "This premise is incorrect — Columbia was the name of the Command Module; the Lunar Module was named Eagle.",
+    "type": "false_premise"
+  },
+  {
+    "question": "Why did Michael Collins land on the Moon alongside Armstrong?",
+    "ground_truth": "This premise is incorrect — Michael Collins remained in lunar orbit aboard the Command Module Columbia; only Armstrong and Aldrin descended to the surface.",
+    "type": "false_premise"
+  },
+  {
+    "question": "Why did the Apollo 11 crew fail to return safely to Earth?",
+    "ground_truth": "This premise is incorrect — the crew returned safely to Earth on July 24, 1969.",
+    "type": "false_premise"
+  },
+  {
+    "question": "Why was Michael Collins the commander of the Apollo 11 mission?",
+    "ground_truth": "This premise is incorrect — Neil Armstrong was the Commander; Michael Collins served as the Command Module Pilot.",
+    "type": "false_premise"
+  },
+  {
+    "question": "Why did Apollo 11 land in the Sea of Serenity?",
+    "ground_truth": "This premise is incorrect — Apollo 11 landed in the Sea of Tranquility (Mare Tranquillitatis), at a site named Tranquility Base.",
+    "type": "false_premise"
+  },
+  {
+    "question": "How much did NASA's Space Shuttle program cost in total?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  },
+  {
+    "question": "What is the capital of Hungary?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  },
+  {
+    "question": "How many people currently live and work aboard the International Space Station?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  },
+  {
+    "question": "What safety modifications were made to the Space Shuttle after the Challenger disaster?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  },
+  {
+    "question": "What was the cause of the oxygen tank failure during the Apollo 13 mission?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  },
+  {
+    "question": "What is NASA's current budget for the Artemis Moon program?",
+    "ground_truth": "I don't know based on the available documents.",
+    "type": "out_of_scope"
+  }
+]

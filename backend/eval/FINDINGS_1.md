@@ -1,8 +1,9 @@
 # RAG Evaluation Findings
 
-**PDF:** ALDI 2024 Sustainability Report · **Model:** gpt-4o-mini · **Embeddings:** text-embedding-3-small · **Chunks:** 500 chars, 100 overlap · **Dataset:** 21 questions (13 single_hop, 6 multi_hop, 2 out_of_scope)
+**PDF:** ALDI 2024 Sustainability Report · **Embeddings:** text-embedding-3-small · **Chunks:** 500 chars, 100 overlap · **Dataset:** 21 questions (13 single_hop, 6 multi_hop, 2 out_of_scope)
 
 ---
+You can find the raw test results in the test_results_findings_1 folder
 
 ## What I measured
 
@@ -10,7 +11,6 @@ I used RAGAS with three metrics: faithfulness, answer relevancy, and context rec
 
 The first runs used gpt-4o-mini as both the app model and the judge. Later I switched the judge to gpt-4.1-mini, since a stronger model judges more strictly. Generally better to use a stronger judge than the model you're testing, so it's not grading its own homework.
 
----
 
 ## Retrieval tuning (k = number of retrieved chunks)
 
@@ -38,7 +38,7 @@ Each k was run multiple times; the table shows the median multi_hop recall.
 
 k=7 wins with both judges. At k=8 performance drops because the extra chunks add noise.
 
-**Final config: k=7, judge: gpt-4.1-mini**
+## Final config: k=7, judge: gpt-4.1-mini
 
 | Metric | single_hop | multi_hop | overall |
 |---|---|---|---|
@@ -48,18 +48,19 @@ k=7 wins with both judges. At k=8 performance drops because the extra chunks add
 
 Out-of-scope refusal: **2/2 (100%)**
 
----
 
 ## Why multi_hop recall is low
 
 ~0.57 is probably the ceiling for this setup. The problem is that one query can't reliably pull chunks from several distant sections at the same time. Tuning k helps a bit but doesn't fix the root cause.
 
-The proper fix would be query decomposition: break the question into sub-questions, retrieve each separately, then combine the results. That's a bigger architectural change.
+The proper fix would be query decomposition: break the question into sub-questions, retrieve each separately, then combine the results or another option would be re-ranking: retrieve a high top-k, then rerank the results with another LLM call.
 
----
 
-## Other changes
+## Test dataset
 
-**Async refactor:** the `/ask` and `/ask/stream` routes were blocking the FastAPI event loop. Fixed by making `RetrievalService.answer()` and `stream_answer()` fully async (`ainvoke`, `astream`, `asyncio.to_thread` for the DB). Simple CRUD routes stay as `def`, since FastAPI threads those automatically.
+The ALDI sustainability report was not a good source for multi-hop questions. The report has separate facts in each section, and the sections don't really connect to each other, so it was hard to write good multi-hop questions from it.
 
-**Dataset fix:** corrected two questions whose ground truths were swapped. One question was too vague for retrieval and consistently scored low; I kept it as a known weak point.
+
+## Next step
+
+I will use a different PDF, and let RAGAS generate the test set automatically. I won't implement the query decomposition or re-ranking yet. First, I would like to test the RAG chatbot with better test data.
