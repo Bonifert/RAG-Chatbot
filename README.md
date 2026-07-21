@@ -77,15 +77,16 @@ All settings are in `backend/.env` — copy `.env.example` to get started.
 
 ## Evaluation
 
-The backend includes a RAGAS-based evaluation pipeline (`backend/eval/`) that measures
-faithfulness, answer relevancy, and context recall against a fixed test dataset built
-around a sample PDF (ALDI 2024 Sustainability Report).
+The backend has an evaluation pipeline (`backend/eval/`) that uses RAGAS to check the
+answers. It measures faithfulness, answer relevancy, and context recall, using a test
+document and a set of test questions.
 
-Unlike the main app, this runs locally (not in Docker), since it imports the backend
-code directly and talks to Postgres over `localhost` instead of the `db` service name.
+This does not run in Docker, unlike the main app. It runs locally, because it imports
+the backend code directly and talks to Postgres over `localhost` instead of the `db`
+service name.
 
-1. Start everything and upload the sample PDF, so the vector store has
-   data to retrieve from: `docker compose up --build`, then upload via the frontend
+1. Start everything and upload a test PDF, so the vector store has
+   data to search: `docker compose up --build`, then upload via the frontend
    or `POST /upload`.
 2. From `backend/`, with your venv active, install the eval dependencies:
    `pip install -r eval/requirements-eval.txt`
@@ -94,4 +95,6 @@ code directly and talks to Postgres over `localhost` instead of the `db` service
 
 Results are printed to the console and saved to a timestamped file in `backend/eval/`.
 
-> **See [`backend/eval/FINDINGS.md`](backend/eval/FINDINGS.md) for the latest tuning results and known limitations.**
+> **The eval results are in `backend/eval/`, one file per round: `FINDINGS_1.md`,
+> `FINDINGS_2.md`, `FINDINGS_3.md`, with more added as testing continues. Read them
+> in order, each one builds on the one before it.**

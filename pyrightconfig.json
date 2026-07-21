@@ -1,3 +1,14 @@
 {
-  "typeCheckingMode": "strict"
+  "typeCheckingMode": "strict",
+  "executionEnvironments": [
+    {
+      "root": "backend/eval",
+      "extraPaths": ["backend"],
+      "reportUnknownMemberType": "none",
+      "reportUnknownVariableType": "none",
+      "reportUnknownArgumentType": "none",
+      "reportUnknownParameterType": "none",
+      "reportMissingTypeStubs": "none"
+    }
+  ]
 }
