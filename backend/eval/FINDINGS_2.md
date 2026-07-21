@@ -30,3 +30,5 @@ False-premise correction: 7/18 (39%).
 ## Next step
 
 Add an instruction to the system prompt for handling false premises, then test again. I would like to test only one change at a time, so I won't implement query decomposition or re-ranking now.
+
+I'll also add a way to run the eval on just one question type, so I'm not burning tokens re-testing all 72 questions while iterating. Risk: I won't immediately see if a change affects the other types. But cost matters more right now, so I'll accept that and run the full eval once at the end to check.
