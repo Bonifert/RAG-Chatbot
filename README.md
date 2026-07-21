@@ -25,7 +25,7 @@ Chat with your PDF documents using RAG (Retrieval-Augmented Generation).
 - Evaluated with RAGAS on faithfulness, answer relevancy, and context recall, with actual
   measured numbers instead of guessing.
 - Tuned the retrieval `k` value by testing it specifically on multi-hop questions, which
-  need chunks from several distant sections of the document. Landed on k=7.
+  need chunks from several distant sections of the document.
 - Used a different model as the evaluation judge than the one the app itself uses, so it
   isn't grading its own answers.
 - Found and fixed a blocking event loop bug in the FastAPI streaming routes. `/ask` and
