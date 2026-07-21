@@ -29,4 +29,4 @@ False-premise correction: 7/18 (39%).
 
 ## Next step
 
-Add an instruction to the system prompt for handling false premises, then test again. The multi-hop recall problem (query decomposition or re-ranking) is still open.
+Add an instruction to the system prompt for handling false premises, then test again. I would like to test only one change at a time, so I won't implement query decomposition or re-ranking now.
