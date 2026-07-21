@@ -43,7 +43,7 @@ k=7 wins with both judges. At k=8 performance drops because the extra chunks add
 | Metric | single_hop | multi_hop | overall |
 |---|---|---|---|
 | faithfulness | 1.000 | 0.970 | 0.997 |
-| answer_relevancy | 0.880 | 0.968 | 0.908 |
+| relevancy | 0.880 | 0.968 | 0.908 |
 | context_recall | 0.962 | 0.567 | 0.837 |
 
 Out-of-scope refusal: **2/2 (100%)**

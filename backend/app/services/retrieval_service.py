@@ -38,6 +38,7 @@ class RetrievalService:
             "Each document is marked with [Source: ...].\n"
             "If multiple sources contain relevant information, combine them ALL in your answer.\n"
             "When citing sources, mention only the document title, not the full [Source: ...] tag format.\n"
+            "If the question assumes something that contradicts the context, say so and give the correct fact from the context.\n"
             'If the information is not in the context, say "I don\'t know based on the available documents."'
         )
         messages.append(SystemMessage(content=system_prompt))

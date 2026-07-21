@@ -1,0 +1,38 @@
+=== EVAL RUN METADATA ===
+Run:       2026-07-21 13:43:46
+Model:     gpt-4.1-miniEmbedding: text-embedding-3-smallSamples:   6
+
+=== PER QUESTION ===
+[false_premise] Why was Buzz Aldrin the first person to walk on the Moon?
+  corrected ✓  faithfulness=1.00  relevancy=0.74  recall=1.00
+  answer: Buzz Aldrin was not the first person to walk on the Moon; Neil Armstrong was the first, followed by Aldrin nineteen minutes later. There was significant discussion and some controversy regarding who would exit the Lunar Module first, as Aldrin believed he should be the first due to his role as the Lunar Module pilot. However, it was ultimately decided that Armstrong would be the first to walk on the Moon, primarily because he was the commander of the mission. This decision was communicated in a press conference on April 14, 1969, and was partly influenced by the Lunar Module's hatch location and the idea that the commander would lead the mission, which matched what had been done in previous Gemini missions.
+
+[false_premise] Why was the Lunar Module named Columbia?
+  corrected ✓  faithfulness=1.00  relevancy=0.84  recall=1.00
+  answer: The Lunar Module (LM) was not named Columbia; rather, it was named Eagle. Columbia was the name of the Command Module (CM). The name Columbia was chosen after Columbiad, the giant cannon in Jules Verne's novel "From the Earth to the Moon," and it also referred to Columbia, a historical name for the United States. Additionally, Collins mentioned in his 1976 book that it was also in reference to Christopher Columbus.
+
+[false_premise] Why did Michael Collins land on the Moon alongside Armstrong?
+  corrected ✓  faithfulness=1.00  relevancy=0.71  recall=1.00
+  answer: Michael Collins did not land on the Moon; he remained in lunar orbit aboard the command module Columbia while Neil Armstrong and Buzz Aldrin landed on the Moon in the lunar module Eagle. Collins was responsible for operating the command module during their lunar surface activities.
+
+[false_premise] Why did the Apollo 11 crew fail to return safely to Earth?
+  corrected ✓  faithfulness=1.00  relevancy=0.78  recall=1.00
+  answer: The Apollo 11 crew did not fail to return safely to Earth; they actually returned safely on July 24 after spending 21 hours on the lunar surface. The mission culminated successfully with their splashdown in the Pacific Ocean. There were challenges during the mission, such as encountering a premature low fuel warning and issues with the guidance computer, but these did not prevent their safe return.
+
+[false_premise] Why was Michael Collins the commander of the Apollo 11 mission?
+  corrected ✓  faithfulness=1.00  relevancy=0.71  recall=1.00
+  answer: Michael Collins was not the commander of the Apollo 11 mission; Neil Armstrong served as the commander. Collins was the Command Module Pilot. Armstrong, Collins, and Lunar Module Pilot Edwin "Buzz" Aldrin all participated in the Apollo 11 mission, and it was Armstrong who was responsible for commanding the mission based on the crew rotation scheme following his previous assignment as backup for Apollo 8.
+
+[false_premise] Why did Apollo 11 land in the Sea of Serenity?
+  corrected ✓  faithfulness=1.00  relevancy=0.68  recall=1.00
+  answer: Apollo 11 did not land in the Sea of Serenity; it landed in the Sea of Tranquility (Mare Tranquillitatis). The landing site was chosen because it was close to the lunar equator to minimize the amount of propellant required, free of obstacles to minimize maneuvering, and flat to simplify the landing process. Five sites were considered, but ultimately, Site 2 in the Sea of Tranquility was selected. The final site selection was based on several criteria, and scientific value was not one of them.
+
+=== AVERAGES (answerable only, n=0) ===
+faithfulness:     nan
+answer_relevancy: nan
+context_recall:   nan
+
+=== PER TYPE ===
+[false_premise] (n=6)
+  correct corrections=6/6 (100%)
+  faithfulness=1.000  relevancy=0.744  recall=1.000

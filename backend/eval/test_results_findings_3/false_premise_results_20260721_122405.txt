@@ -1,0 +1,38 @@
+=== EVAL RUN METADATA ===
+Run:       2026-07-21 12:24:05
+Model:     gpt-4.1-miniEmbedding: text-embedding-3-smallSamples:   6
+
+=== PER QUESTION ===
+[false_premise] Why was Buzz Aldrin the first person to walk on the Moon?
+  corrected ✓  faithfulness=1.00  relevancy=0.74  recall=1.00
+  answer: Buzz Aldrin was not the first person to walk on the Moon; Neil Armstrong was the first. Armstrong became the first human to walk on the Moon approximately six hours after landing. Aldrin followed him nineteen minutes later. The decision for Armstrong to be the first was influenced by his role as the commander of the Apollo 11 mission, despite Aldrin's attempts to argue otherwise. This decision was made clear during a press conference on April 14, 1969, and was discussed in internal meetings among NASA officials where it was determined that the commander would exit the spacecraft first.
+
+[false_premise] Why was the Lunar Module named Columbia?
+  corrected ✓  faithfulness=1.00  relevancy=0.84  recall=1.00
+  answer: The Lunar Module (LM) was named Eagle, not Columbia. The Command Module (CM), however, was named Columbia after the Columbiad, the giant cannon from Jules Verne's 1865 novel *From the Earth to the Moon*, as well as referring to Columbia, a historical name of the United States. Additionally, in Collins' 1976 book, he mentioned that Columbia was also in reference to Christopher Columbus.
+
+[false_premise] Why did Michael Collins land on the Moon alongside Armstrong?
+  corrected ✓  faithfulness=1.00  relevancy=0.77  recall=1.00
+  answer: Michael Collins did not land on the Moon. He remained in lunar orbit aboard the Command Module Columbia while Neil Armstrong and Edwin "Buzz" Aldrin landed on the Moon in the Lunar Module Eagle.
+
+[false_premise] Why did the Apollo 11 crew fail to return safely to Earth?
+  corrected ✓  faithfulness=1.00  relevancy=0.78  recall=1.00
+  answer: The Apollo 11 crew did not fail to return safely to Earth; in fact, they successfully returned on July 24 after splashing down in the Pacific Ocean. There is no information in the documents suggesting that they failed to return safely.
+
+[false_premise] Why was Michael Collins the commander of the Apollo 11 mission?
+  corrected ✓  faithfulness=1.00  relevancy=0.87  recall=1.00
+  answer: Michael Collins was not the commander of the Apollo 11 mission; he served as the Command Module Pilot (CMP). The commander of Apollo 11 was Neil Armstrong. Collins was selected for the Apollo 11 crew after he recovered from surgery that had previously caused him to be replaced on the Apollo 8 crew. The decision for Collins to join Armstrong's crew was part of a crew rotation scheme, with Armstrong expected to command Apollo 11.
+
+[false_premise] Why did Apollo 11 land in the Sea of Serenity?
+  corrected ✓  faithfulness=1.00  relevancy=0.67  recall=1.00
+  answer: Apollo 11 did not land in the Sea of Serenity; it actually landed in the Sea of Tranquility (Mare Tranquillitatis). The landing site was selected based on several criteria, including the need to be close to the lunar equator to minimize propellant use, free of obstacles for safer maneuvering, and flat for easier landing radar operation. The original requirement that the site be entirely free of craters was relaxed since no such site was found. Ultimately, the Apollo Site Selection Board chose Site 2 in the Sea of Tranquility, considering it acceptable based on prior reconnaissance from Apollo 10's lunar module.
+
+=== AVERAGES (answerable only, n=0) ===
+faithfulness:     nan
+answer_relevancy: nan
+context_recall:   nan
+
+=== PER TYPE ===
+[false_premise] (n=6)
+  correct corrections=6/6 (100%)
+  faithfulness=1.000  relevancy=0.778  recall=1.000
