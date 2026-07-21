@@ -7,6 +7,7 @@ from collections import defaultdict
 from datetime import datetime
 from typing import TypedDict
 from typing import TextIO
+import argparse
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -61,8 +62,18 @@ recall_metric = ContextRecall(llm=llm)
 
 semaphore = asyncio.Semaphore(9)
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--types", type=str, default=None, help="Comma-separated list of types to run, e.g. false_premise,out_of_scope")
+args = parser.parse_args()
+selected_types = set(args.types.split(",")) if args.types else None
+
 with open("eval/test_dataset_apollo.json") as f:
     raw: list[RawSample] = json.load(f)
+
+if selected_types and selected_types != {"all"}:
+    raw = [r for r in raw if r["type"] in selected_types]
+
+assert raw, "no sample matched --types"
 
 
 def mean(values: list[float]) -> float:
