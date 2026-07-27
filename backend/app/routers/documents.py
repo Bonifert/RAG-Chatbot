@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, File, UploadFile, Form
 from app.services.ingestion_service import IngestionService
-from app.services.retrieval_service import RetrievalService
+from app.services.rag_service import RagService
 from app.services.document_service import DocumentService
-from app.dependencies import get_ingestion_service, get_retrieval_service, get_document_service
+from app.dependencies import get_ingestion_service, get_rag_service, get_document_service
 from app.schemas import AnswerResponse, AskRequest
 from fastapi.responses import StreamingResponse
 import json
@@ -15,7 +15,7 @@ def upload_pdf(file: UploadFile = File(...), title: str = Form(...), service: In
     return {"message": f"File uploaded and processed successfully: {file.filename}"}
 
 @router.post("/ask")
-async def ask_question(body: AskRequest, service: RetrievalService = Depends(get_retrieval_service)) -> AnswerResponse:
+async def ask_question(body: AskRequest, service: RagService = Depends(get_rag_service)) -> AnswerResponse:
     question_answer = await service.answer(body.question, body.history)
     return AnswerResponse(answer=question_answer["answer"], sources=question_answer["sources"])
 
@@ -24,7 +24,7 @@ def get_documents(service: DocumentService = Depends(get_document_service)) -> l
     return service.get_documents()
 
 @router.post("/ask/stream")
-async def ask_question_stream(body: AskRequest, service: RetrievalService = Depends(get_retrieval_service)) -> StreamingResponse:
+async def ask_question_stream(body: AskRequest, service: RagService = Depends(get_rag_service)) -> StreamingResponse:
     async def generate():
         async for token, sources in service.stream_answer(body.question, body.history):
             if sources is not None:

@@ -17,6 +17,8 @@ os.environ["DATABASE_URL"] = os.environ["DATABASE_URL"].replace("@db:", "@localh
 
 from app.repositories.document_repository import DocumentRepository
 from app.services.retrieval_service import RetrievalService
+from app.services.answer_service import AnswerService
+from app.services.rag_service import RagService
 from openai import AsyncOpenAI
 from ragas import SingleTurnSample, EvaluationDataset
 from ragas.llms import llm_factory
@@ -54,7 +56,9 @@ llm = llm_factory(LLM_MODEL, client=client, max_tokens=4096)
 embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, client=client)
 
 repo = DocumentRepository()
-service = RetrievalService(repo)
+retrieval_service = RetrievalService(repo)
+answer_service = AnswerService()
+service = RagService(retrieval_service, answer_service)
 
 faithfulness_metric = Faithfulness(llm=llm)
 relevancy_metric = AnswerRelevancy(llm=llm, embeddings=embeddings)
